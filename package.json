@@ -1,0 +1,8 @@
+{
+  "name": "setki",
+  "version": "0.0.1",
+  "description": "High-performance JavaScript TreeGrid library",
+  "main": "index.js",
+  "author": "OKUNEV MAKSIM",
+  "license": "UNLICENSED"
+}
