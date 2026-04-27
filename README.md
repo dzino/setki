@@ -3,7 +3,7 @@
 High-performance data grid powered by **Signals** for extreme rendering speed.
 
 🔗 **Official Website:** [https://setki.dev](https://setki.dev)
-📦 **NPM:** [https://www.npmjs.com/package/setki](https://www.npmjs.com/package/setki)
+📦 **NPM:** [https://www.npmjs.com/package/setki](https://www.npmjs.com/package/@dzino/setki)
 
 ---
 
