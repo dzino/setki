@@ -1,4 +1,11 @@
-# SETKI
+# SETKI TreeGrid 🚀
+
+High-performance data grid powered by **Signals** for extreme rendering speed.
+
+🔗 **Official Website:** [https://setki.dev](https://setki.dev)
+📦 **NPM:** [https://www.npmjs.com/package/setki](https://www.npmjs.com/package/setki)
+
+---
 
 Advanced TreeGrid Component.
 
