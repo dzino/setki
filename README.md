@@ -31,10 +31,3 @@ SETKI is a commercial product. While you can evaluate the library for free, a co
 | **Price** | $0 | **$49.99 / year** |
 
 👉 **[Get a Pro License at setki.dev](https://setki.dev)**
-
----
-
-## 🛠 Installation
-
-```bash
-npm install @dzino/setki
