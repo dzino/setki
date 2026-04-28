@@ -14,8 +14,6 @@ SETKI is a high-performance TreeGrid component engineered for web applications t
 * **Signals-Powered Rendering:** Zero-lag DOM updates using modern signal-based reactivity.
 * **Infinite Deep Nesting:** Native support for complex hierarchical tree structures.
 * **Extreme Scalability:** Effortlessly handle 500+ rows per level with virtual scrolling.
-* **Enterprise Integrations:** Built-in compatibility for Bitrix24, Zoho, and high-load CRM systems.
-* **Developer Friendly:** Written in TypeScript with a clean, intuitive API.
 
 ---
 
