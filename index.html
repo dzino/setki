@@ -3,102 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SETKI | Enterprise JS TreeGrid</title>
+    <title>SETKI | High-Performance JS TreeGrid</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.3); }
+        .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.3); transition: transform 0.2s; }
+        .feature-card:hover { transform: translateY(-5px); border-color: rgba(59, 130, 246, 0.5); }
         .feature-tag { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); color: #60a5fa; }
+        .pricing-card { background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 1) 100%); border: 2px solid #3b82f6; }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-200 font-sans leading-relaxed">
 
-    <header class="max-w-6xl mx-auto px-6 pt-20 pb-10 text-center">
-        <h1 class="text-6xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">SETKI</h1>
-        <p class="text-2xl text-slate-400 max-w-2xl mx-auto mb-8">The next-generation High-Performance TreeGrid library for complex data-driven interfaces.</p>
-        <div class="flex justify-center gap-4">
-            <span class="feature-tag px-4 py-1 rounded-full text-sm font-semibold uppercase tracking-wider">Under Development</span>
-            <span class="feature-tag px-4 py-1 rounded-full text-sm font-semibold uppercase tracking-wider">Commercial License</span>
+    <header class="max-w-6xl mx-auto px-6 pt-24 pb-12 text-center">
+        <h1 class="text-7xl font-extrabold mb-6 bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent italic tracking-tighter">SETKI</h1>
+        <p class="text-2xl text-slate-400 max-w-3xl mx-auto mb-10">The High-Performance **Signals-based** TreeGrid library for massive datasets and complex enterprise UIs.</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <span class="feature-tag px-4 py-1 rounded-full text-sm font-semibold uppercase tracking-wider italic">Powered by Signals</span>
+            <span class="feature-tag px-4 py-1 rounded-full text-sm font-semibold uppercase tracking-wider">v0.8.4 Beta</span>
+        </div>
+
+        <div class="flex justify-center gap-6">
+            <a href="#pricing" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 px-8 rounded-xl transition shadow-lg shadow-blue-900/20">Get Pro License</a>
+            <a href="https://github.com/dzino/setki" class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-8 rounded-xl transition border border-slate-700">View on GitHub</a>
         </div>
     </header>
 
     <section class="max-w-5xl mx-auto px-6 mb-24">
         <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-800">
-            <img src="demo.jpeg" alt="SETKI Interface Preview" class="w-full h-auto min-h-[300px] object-cover bg-slate-700 flex items-center justify-center text-slate-500 italic" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-20 text-center text-slate-500\'>[ Placeholder for demo.jpeg ]</div>'">
+            <div class="p-20 text-center text-slate-500 italic bg-slate-900/50">
+                <p class="mb-4">[ Interactive TreeGrid Demo Loading... ]</p>
+                <div class="w-full max-w-md mx-auto bg-slate-800 h-2 rounded-full overflow-hidden">
+                    <div class="bg-blue-500 h-full w-2/3"></div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="max-w-6xl mx-auto px-6 pb-20">
-        <h2 class="text-3xl font-bold mb-12 text-center text-white">Product Roadmap & Features</h2>
-        
+    <section id="pricing" class="max-w-4xl mx-auto px-6 mb-24">
+        <h2 class="text-4xl font-bold mb-12 text-center text-white italic">Pricing</h2>
+        <div class="pricing-card p-8 rounded-3xl text-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 uppercase tracking-widest rounded-bl-lg">Early Access</div>
+            <h3 class="text-2xl font-bold mb-2">Pro Yearly License</h3>
+            <div class="text-5xl font-black my-6">$49.99<span class="text-lg text-slate-400 font-normal"> / year</span></div>
+            <ul class="text-slate-300 space-y-4 mb-10 text-left max-w-xs mx-auto">
+                <li class="flex items-center">✅ Full Access to All Components</li>
+                <li class="flex items-center">✅ 1 Year of Updates & Support</li>
+                <li class="flex items-center">✅ Commercial Usage License</li>
+                <li class="flex items-center">✅ Up to 5 Activations per Key</li>
+            </ul>
+            <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-black py-4 rounded-xl text-xl transition transform hover:scale-105 opacity-80 cursor-not-allowed">
+                Store Pending Approval
+            </button>
+            <p class="text-xs text-slate-500 mt-4">Safe checkout via Lemon Squeezy</p>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 pb-24">
+        <h2 class="text-3xl font-bold mb-12 text-center text-white">Why SETKI?</h2>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-xl font-bold mb-4 text-blue-400 border-b border-slate-700 pb-2">Core & Engine</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>• Real-time updates via Web-Sockets</li>
-                    <li>• Role-based access control</li>
-                    <li>• Skeleton loading states</li>
-                    <li>• Advanced data filtering engine</li>
-                    <li>• Sub-item nesting (Tree structure)</li>
-                </ul>
+            <div class="feature-card p-8 rounded-2xl">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6 text-blue-400 font-bold text-2xl">⚡</div>
+                <h3 class="text-xl font-bold mb-4 text-blue-400">Extreme Speed</h3>
+                <p class="text-sm text-slate-400">Optimized for Bitrix24 & Zoho environments. Virtual DOM & Signals ensure zero-lag even with 500+ rows.</p>
             </div>
 
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-xl font-bold mb-4 text-emerald-400 border-b border-slate-700 pb-2">Smart Cell Types</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>• Financial: Triad grouping & Up/Down trends</li>
-                    <li>• Components: Checkboxes, Ratings (Stars)</li>
-                    <li>• Pickers: Calendar, Time & Advanced Selectors</li>
-                    <li>• Content: Links, Tooltips & Graphics</li>
-                    <li>• Visual: Conditional cell highlighting</li>
-                </ul>
+            <div class="feature-card p-8 rounded-2xl">
+                <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6 text-emerald-400 font-bold text-2xl">📊</div>
+                <h3 class="text-xl font-bold mb-4 text-emerald-400">Smart Cells</h3>
+                <p class="text-sm text-slate-400">Built-in financial triad grouping, ratings, calendar pickers, and conditional visual highlighting.</p>
             </div>
 
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-xl font-bold mb-4 text-purple-400 border-b border-slate-700 pb-2">Advanced Selector</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>• Single & Multiple selection modes</li>
-                    <li>• Instant search & Multi-column display</li>
-                    <li>• Inline editing & creation</li>
-                    <li>• Visual color coding</li>
-                </ul>
-            </div>
-
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-xl font-bold mb-4 text-orange-400 border-b border-slate-700 pb-2">Header Controls</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>• Multi-editing capabilities</li>
-                    <li>• Drag-and-drop column reordering</li>
-                    <li>• Dynamic column resizing</li>
-                    <li>• Multi-column sorting</li>
-                    <li>• Role-based column visibility</li>
-                </ul>
-            </div>
-
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-xl font-bold mb-4 text-pink-400 border-b border-slate-700 pb-2">Footer & Stats</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>• Row grouping & folding</li>
-                    <li>• Real-time row counters</li>
-                    <li>• Automatic column totals (Sum/Avg)</li>
-                </ul>
-            </div>
-
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-xl font-bold mb-4 text-yellow-400 border-b border-slate-700 pb-2">Config & Presets</h3>
-                <ul class="space-y-2 text-sm">
-                    <li>• Auto-generated JSON configurations</li>
-                    <li>• Real-time Preview vs Config view</li>
-                    <li>• Built-in Config Validator</li>
-                    <li>• Industry Presets (Warehouse, Sales, Gantt)</li>
-                </ul>
+            <div class="feature-card p-8 rounded-2xl">
+                <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6 text-purple-400 font-bold text-2xl">📂</div>
+                <h3 class="text-xl font-bold mb-4 text-purple-400">Deep Nesting</h3>
+                <p class="text-sm text-slate-400">Infinite hierarchical tree structure with role-based access control for every level.</p>
             </div>
 
         </div>
     </section>
 
-    <footer class="text-center py-10 border-t border-slate-800 text-slate-500 text-sm">
-        <p>© 2026 SETKI Project. All rights reserved. <br> Private Beta for Enterprise Clients.</p>
+    <footer class="max-w-6xl mx-auto px-6 py-12 border-t border-slate-800 text-center">
+        <div class="flex justify-center gap-8 mb-6 text-slate-400 font-medium">
+            <a href="mailto:maksoku@gmail.com" class="hover:text-blue-400 transition">Contact</a>
+            <a href="https://github.com/dzino/setki" class="hover:text-blue-400 transition">GitHub</a>
+            <a href="#" class="hover:text-blue-400 transition">Docs</a>
+        </div>
+        <p class="text-slate-500 text-sm italic">© 2026 SETKI.dev — Engineered in Da Nang.</p>
     </footer>
 
 </body>
