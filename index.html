@@ -1,240 +1,346 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>SETKI | Enterprise JS TreeGrid</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-
-        .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.3); }
-
-        .feature-tag { background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); color: #60a5fa; }
-
-    </style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SETKI Grid for Zoho CRM — Inline Edit, Bulk Update, Sparklines</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.3); }
+    .role-badge { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+  </style>
 </head>
 
-<body class="bg-slate-900 text-slate-200 font-sans leading-relaxed">
+<body class="bg-slate-950 text-slate-200 font-sans leading-relaxed">
 
+  <!-- 1. HERO -->
+  <section class="max-w-6xl mx-auto px-6 pt-24 pb-16 text-center">
+    <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">SETKI Grid for Zoho CRM</p>
+    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-white leading-tight">
+      Your Zoho CRM list —<br>
+      <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">now fully editable</span>
+    </h1>
+    <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
+      Edit any record inline. Bulk-update dozens of rows at once. See trends right in the list — no extra pages, no exports, no switching tools.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-4">
+      <a href="#" class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base">
+        Install free on Zoho Marketplace
+      </a>
+      <a href="#demo" class="text-slate-400 hover:text-white font-medium px-8 py-4 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors text-base">
+        See it in action ↓
+      </a>
+    </div>
+    <p class="text-slate-500 text-sm">Free for teams up to 3 users. No time limit.</p>
+  </section>
 
+  <!-- Demo screenshot -->
+  <section id="demo" class="max-w-5xl mx-auto px-6 pb-24">
+    <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+      <img src="demo.jpeg" alt="SETKI Grid in Zoho CRM" class="w-full h-auto"
+        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-20 text-center text-slate-600\'>[demo screenshot]</div>'">
+    </div>
+  </section>
 
-    <header class="max-w-6xl mx-auto px-6 pt-20 pb-10 text-center">
+  <!-- 2. PAIN -->
+  <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
+    <h2 class="text-3xl font-bold text-white mb-6">Zoho CRM is powerful.<br>Updating it shouldn't take hours.</h2>
+    <p class="text-slate-400 text-lg leading-relaxed mb-6">
+      Every field update means opening a record, making the change, saving, closing, and moving on to the next one. For a team that processes 50+ records a day, that's an hour of repetitive work — per person.
+    </p>
+    <p class="text-slate-300 text-lg font-medium">
+      SETKI lets your team edit directly in the list view.<br>What used to take an hour now takes minutes.
+    </p>
+  </section>
 
-        <h1 class="text-6xl font-extrabold mb-4 bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">SETKI</h1>
+  <!-- 3. ROLE BLOCK: SALES MANAGER -->
+  <section class="max-w-6xl mx-auto px-6 pb-24">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="role-badge text-blue-400 mb-3">For Sales Teams</p>
+        <h2 class="text-3xl font-bold text-white mb-6">Update 50 records<br>in 5 minutes</h2>
+        <p class="text-slate-400 mb-6 leading-relaxed">
+          Double-click any cell to edit it inline — no record card, no page reload. Picklists, lookup fields, dates, checkboxes, multi-select — all editable directly in the list.
+        </p>
+        <p class="text-slate-400 mb-8 leading-relaxed">
+          Need to update the same field across multiple rows? Select them, change the value once, and it applies to all.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Inline edit for all field types — including picklists, lookups, and multi-select</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Bulk edit: select rows → change one field for all at once</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Instant save with rollback on error</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Sort by any column. Filter by any field.</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Admin can preset default filters and sort order for the whole team</li>
+        </ul>
+      </div>
+      <div class="feature-card rounded-2xl p-8 flex items-center justify-center min-h-64">
+        <div class="text-center text-slate-600">
+          <p class="text-5xl mb-4">✏️</p>
+          <p class="text-sm">[ Screenshot: inline edit picklist ]</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <p class="text-2xl text-slate-400 max-w-2xl mx-auto mb-8">The next-generation High-Performance TreeGrid library for complex data-driven interfaces.</p>
+  <!-- 4. ROLE BLOCK: CRM ADMIN -->
+  <section class="bg-slate-900 py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 feature-card rounded-2xl p-8 flex items-center justify-center min-h-64">
+          <div class="text-center text-slate-600">
+            <p class="text-5xl mb-4">⚙️</p>
+            <p class="text-sm">[ Screenshot: admin settings panel ]</p>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <p class="role-badge text-purple-400 mb-3">For CRM Admins</p>
+          <h2 class="text-3xl font-bold text-white mb-6">Configure once.<br>Everyone sees exactly what they need.</h2>
+          <p class="text-slate-400 mb-6 leading-relaxed">
+            Your sales reps, managers, and team leads work differently — but they all see the same default CRM list.
+          </p>
+          <p class="text-slate-400 mb-8 leading-relaxed">
+            With SETKI, you set up role-based views once. Each Zoho profile gets its own column set, filters, and permissions. No one touches configuration they shouldn't.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-slate-300"><span class="text-purple-400 font-bold shrink-0">✓</span> Role-based presets — different views for Admins, Managers, Reps, Viewers</li>
+            <li class="flex items-start gap-3 text-slate-300"><span class="text-purple-400 font-bold shrink-0">✓</span> Preset columns, filters, and sort order for each role</li>
+            <li class="flex items-start gap-3 text-slate-300"><span class="text-purple-400 font-bold shrink-0">✓</span> Read-only mode — prevent edits for view-only users</li>
+            <li class="flex items-start gap-3 text-slate-300"><span class="text-purple-400 font-bold shrink-0">✓</span> Live settings preview — see changes before saving</li>
+            <li class="flex items-start gap-3 text-slate-300"><span class="text-purple-400 font-bold shrink-0">✓</span> Settings stored in Zoho CRM — nothing leaves your org</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="flex justify-center gap-4">
+  <!-- 5. ROLE BLOCK: SALES LEADER -->
+  <section class="max-w-6xl mx-auto px-6 py-24">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="role-badge text-emerald-400 mb-3">For Sales Leaders</p>
+        <h2 class="text-3xl font-bold text-white mb-6">Spot trends without<br>leaving CRM</h2>
+        <p class="text-slate-400 mb-8 leading-relaxed">
+          Seeing what's happening across your pipeline usually means exporting to Excel or opening a separate analytics tool. With SETKI, the data tells its story right in the list.
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span> Sparklines — mini line charts built from related module data, right in the cell</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span> Color thresholds — cells change color when values cross your limits</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span> Deadline highlighting — today = yellow, overdue = red (colors configurable)</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span> Stock mode — ▲/▼ trend arrows for numeric fields</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span> Progress bars for percent fields</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span> Column totals — Sum or Average at the bottom of any numeric column</li>
+        </ul>
+      </div>
+      <div class="feature-card rounded-2xl p-8 flex items-center justify-center min-h-64">
+        <div class="text-center text-slate-600">
+          <p class="text-5xl mb-4">📈</p>
+          <p class="text-sm">[ Screenshot: sparklines + color thresholds ]</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <span class="feature-tag px-4 py-1 rounded-full text-sm font-semibold uppercase tracking-wider">Under Development</span>
+  <!-- 6. ROI BLOCK -->
+  <section class="bg-slate-900 py-24">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-white mb-16">SETKI pays for itself in the first week</h2>
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        <div class="feature-card rounded-2xl p-8">
+          <p class="text-slate-500 text-xs uppercase tracking-wider mb-4">Without SETKI</p>
+          <p class="text-4xl font-bold text-white mb-2">2 min</p>
+          <p class="text-slate-400 text-sm">per record update</p>
+        </div>
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-8">
+          <p class="text-slate-500 text-xs uppercase tracking-wider mb-4">With SETKI</p>
+          <p class="text-4xl font-bold text-blue-400 mb-2">10 sec</p>
+          <p class="text-slate-400 text-sm">per record update</p>
+        </div>
+        <div class="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-8">
+          <p class="text-slate-500 text-xs uppercase tracking-wider mb-4">Savings</p>
+          <p class="text-4xl font-bold text-emerald-400 mb-2">50 min</p>
+          <p class="text-slate-400 text-sm">per person per day</p>
+        </div>
+      </div>
 
-            <span class="feature-tag px-4 py-1 rounded-full text-sm font-semibold uppercase tracking-wider">Commercial License</span>
+      <div class="feature-card rounded-2xl overflow-hidden mb-6">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-700">
+              <th class="text-left px-6 py-4 text-slate-500 font-medium">Team size</th>
+              <th class="text-right px-6 py-4 text-slate-500 font-medium">Annual savings</th>
+              <th class="text-right px-6 py-4 text-slate-500 font-medium">SETKI Pro cost</th>
+              <th class="text-right px-6 py-4 text-slate-500 font-medium">ROI</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-800">
+            <tr>
+              <td class="px-6 py-4 text-slate-300">5 people</td>
+              <td class="px-6 py-4 text-right text-emerald-400 font-semibold">$22,875</td>
+              <td class="px-6 py-4 text-right text-slate-400">$540</td>
+              <td class="px-6 py-4 text-right text-white font-bold">42×</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-slate-300">10 people</td>
+              <td class="px-6 py-4 text-right text-emerald-400 font-semibold">$45,750</td>
+              <td class="px-6 py-4 text-right text-slate-400">$1,080</td>
+              <td class="px-6 py-4 text-right text-white font-bold">42×</td>
+            </tr>
+            <tr>
+              <td class="px-6 py-4 text-slate-300">20 people</td>
+              <td class="px-6 py-4 text-right text-emerald-400 font-semibold">$91,500</td>
+              <td class="px-6 py-4 text-right text-slate-400">$2,160</td>
+              <td class="px-6 py-4 text-right text-white font-bold">42×</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
+      <p class="text-slate-400 text-sm mb-3">$108/year per person against $4,575 in recovered time.</p>
+      <p class="text-slate-600 text-xs">* Based on 50 record updates/day × 1 min saved × 220 working days × $25/hr. Industry data: sales reps spend 41–66 min/day on CRM data entry (DevRev 2026, HubSpot / Nuclear Research).</p>
+    </div>
+  </section>
+
+  <!-- 7. AI-READY BLOCK -->
+  <section class="max-w-3xl mx-auto px-6 py-24 text-center">
+    <h2 class="text-3xl font-bold text-white mb-6">Configure with AI —<br>describe what you need, get the config</h2>
+    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+      SETKI is configured through a JSON schema that's fully documented and publicly available. This means any AI assistant — Claude, ChatGPT, or others — can generate a complete configuration for you.
+    </p>
+    <p class="text-slate-400 mb-8">Just describe what you need in plain language:</p>
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 mb-8 text-left">
+      <p class="text-slate-300 italic leading-relaxed">"Set up SETKI for our Deals module: pin the Amount column, add sparklines from related Invoices, highlight red if Amount is under $1,000."</p>
+    </div>
+    <p class="text-slate-400 mb-8 leading-relaxed">Paste the output into SETKI's config editor — done in seconds.<br>No technical knowledge required.</p>
+    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Read the documentation →</a>
+  </section>
+
+  <!-- 8. PRICING BLOCK -->
+  <section class="bg-slate-900 py-24" id="pricing">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-white text-center mb-4">Simple pricing. Full functionality from day one.</h2>
+      <p class="text-slate-400 text-center mb-16 text-lg max-w-2xl mx-auto">Both plans include everything — inline edit, bulk update, sparklines, role-based presets, admin panel. No feature gating.</p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+
+        <!-- Free -->
+        <div class="feature-card rounded-2xl p-8">
+          <p class="text-slate-400 text-sm font-semibold uppercase tracking-wider mb-2">Free</p>
+          <p class="text-4xl font-bold text-white mb-1">$0</p>
+          <p class="text-slate-500 text-sm mb-6">forever</p>
+          <p class="text-slate-400 text-sm mb-8">For teams up to 3 users</p>
+          <ul class="space-y-3 mb-10">
+            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Inline edit — all field types</li>
+            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Bulk edit</li>
+            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Sparklines and data visualization</li>
+            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Role-based presets</li>
+            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Admin configuration panel</li>
+            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> 8 languages</li>
+          </ul>
+          <p class="text-slate-500 text-xs mb-6">No credit card. No time limit.</p>
+          <a href="#" class="block text-center border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+            Install free →
+          </a>
         </div>
 
-    </header>
-
-
-
-    <section class="max-w-5xl mx-auto px-6 mb-24">
-
-        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-800 bg-slate-800">
-
-            <img src="demo.jpeg" alt="SETKI Interface Preview" class="w-full h-auto min-h-[300px] object-cover bg-slate-700 flex items-center justify-center text-slate-500 italic" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-20 text-center text-slate-500\'>[ Placeholder for demo.jpeg ]</div>'">
-
+        <!-- Pro (highlighted) -->
+        <div class="bg-blue-600/10 border-2 border-blue-500/50 rounded-2xl p-8 relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Recommended</div>
+          <p class="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-2">Pro</p>
+          <p class="text-4xl font-bold text-white mb-1">$9</p>
+          <p class="text-slate-400 text-sm mb-1">/ user / month, billed annually</p>
+          <p class="text-slate-500 text-xs mb-6">$12 / user / month billed monthly</p>
+          <p class="text-slate-400 text-sm mb-6">For teams of 4 or more</p>
+          <p class="text-slate-300 text-sm font-medium mb-4">Everything in Free, for your full team.</p>
+          <ol class="space-y-2 mb-10">
+            <li class="text-slate-400 text-sm flex gap-2"><span class="text-blue-400 font-bold shrink-0">1.</span> Purchase seats at setki.dev</li>
+            <li class="text-slate-400 text-sm flex gap-2"><span class="text-blue-400 font-bold shrink-0">2.</span> In SETKI settings, assign seats to specific Zoho users</li>
+            <li class="text-slate-400 text-sm flex gap-2"><span class="text-blue-400 font-bold shrink-0">3.</span> Each assigned user gets full access</li>
+          </ol>
+          <a href="#" class="block text-center bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+            Get seats for your team →
+          </a>
         </div>
 
-    </section>
-
-
-
-    <section class="max-w-6xl mx-auto px-6 pb-20">
-
-        <h2 class="text-3xl font-bold mb-12 text-center text-white">Product Roadmap & Features</h2>
-
-        
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            
-
-            <div class="feature-card p-6 rounded-2xl">
-
-                <h3 class="text-xl font-bold mb-4 text-blue-400 border-b border-slate-700 pb-2">Core & Engine</h3>
-
-                <ul class="space-y-2 text-sm">
-
-                    <li>• Real-time updates via Web-Sockets</li>
-
-                    <li>• Role-based access control</li>
-
-                    <li>• Skeleton loading states</li>
-
-                    <li>• Advanced data filtering engine</li>
-
-                    <li>• Sub-item nesting (Tree structure)</li>
-
-                </ul>
-
-            </div>
-
-
-
-            <div class="feature-card p-6 rounded-2xl">
-
-                <h3 class="text-xl font-bold mb-4 text-emerald-400 border-b border-slate-700 pb-2">Smart Cell Types</h3>
-
-                <ul class="space-y-2 text-sm">
-
-                    <li>• Financial: Triad grouping & Up/Down trends</li>
-
-                    <li>• Components: Checkboxes, Ratings (Stars)</li>
-
-                    <li>• Pickers: Calendar, Time & Advanced Selectors</li>
-
-                    <li>• Content: Links, Tooltips & Graphics</li>
-
-                    <li>• Visual: Conditional cell highlighting</li>
-
-                </ul>
-
-            </div>
-
-
-
-            <div class="feature-card p-6 rounded-2xl">
-
-                <h3 class="text-xl font-bold mb-4 text-purple-400 border-b border-slate-700 pb-2">Advanced Selector</h3>
-
-                <ul class="space-y-2 text-sm">
-
-                    <li>• Single & Multiple selection modes</li>
-
-                    <li>• Instant search & Multi-column display</li>
-
-                    <li>• Inline editing & creation</li>
-
-                    <li>• Visual color coding</li>
-
-                </ul>
-
-            </div>
-
-
-
-            <div class="feature-card p-6 rounded-2xl">
-
-                <h3 class="text-xl font-bold mb-4 text-orange-400 border-b border-slate-700 pb-2">Header Controls</h3>
-
-                <ul class="space-y-2 text-sm">
-
-                    <li>• Multi-editing capabilities</li>
-
-                    <li>• Drag-and-drop column reordering</li>
-
-                    <li>• Dynamic column resizing</li>
-
-                    <li>• Multi-column sorting</li>
-
-                    <li>• Role-based column visibility</li>
-
-                </ul>
-
-            </div>
-
-
-
-            <div class="feature-card p-6 rounded-2xl">
-
-                <h3 class="text-xl font-bold mb-4 text-pink-400 border-b border-slate-700 pb-2">Footer & Stats</h3>
-
-                <ul class="space-y-2 text-sm">
-
-                    <li>• Row grouping & folding</li>
-
-                    <li>• Real-time row counters</li>
-
-                    <li>• Automatic column totals (Sum/Avg)</li>
-
-                </ul>
-
-            </div>
-
-
-
-            <div class="feature-card p-6 rounded-2xl">
-
-                <h3 class="text-xl font-bold mb-4 text-yellow-400 border-b border-slate-700 pb-2">Config & Presets</h3>
-
-                <ul class="space-y-2 text-sm">
-
-                    <li>• Auto-generated JSON configurations</li>
-
-                    <li>• Real-time Preview vs Config view</li>
-
-                    <li>• Built-in Config Validator</li>
-
-                    <li>• Industry Presets (Warehouse, Sales, Gantt)</li>
-
-                </ul>
-
-            </div>
-
-
-
+      </div>
+      <p class="text-center text-slate-500 text-sm">Questions? <a href="mailto:hello@setki.dev" class="text-blue-400 hover:underline">hello@setki.dev</a></p>
+    </div>
+  </section>
+
+  <!-- 9. TRUST BLOCK -->
+  <section class="max-w-5xl mx-auto px-6 py-24">
+    <h2 class="text-3xl font-bold text-white text-center mb-16">Your data stays in Zoho</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="text-center">
+        <div class="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <span class="text-blue-400 text-xl font-bold">✓</span>
         </div>
-
-    </section>
-
-
-
-    <section class="max-w-3xl mx-auto px-6 pb-24" id="faq">
-
-        <h2 class="text-3xl font-bold mb-10 text-center text-white">FAQ</h2>
-
-        <div class="space-y-4">
-
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-lg font-semibold text-white mb-2">How do I activate my license?</h3>
-                <p class="text-slate-400 text-sm">After purchase, your license key appears in the confirmation screen and in the receipt email. To activate:</p>
-                <ol class="list-decimal list-inside text-slate-400 text-sm mt-2 space-y-1">
-                    <li>Open Zoho CRM and go to any module list view.</li>
-                    <li>Click the SETKI gear icon (⚙) in the top right.</li>
-                    <li>Go to the <strong class="text-slate-300">License</strong> tab and paste your key.</li>
-                    <li>Click <strong class="text-slate-300">Activate</strong>.</li>
-                </ol>
-            </div>
-
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-lg font-semibold text-white mb-2">I didn't receive the email with my key. What do I do?</h3>
-                <p class="text-slate-400 text-sm">Check your spam folder first. If the email still isn't there, you can retrieve your license key anytime via the <a href="https://app.lemonsqueezy.com/my-orders" class="text-blue-400 hover:underline" target="_blank" rel="noopener">LemonSqueezy customer portal</a> using the email you provided at checkout.</p>
-            </div>
-
-            <div class="feature-card p-6 rounded-2xl">
-                <h3 class="text-lg font-semibold text-white mb-2">How many users does my license cover?</h3>
-                <p class="text-slate-400 text-sm">SETKI Pro is licensed per seat. Each quantity unit covers one Zoho CRM user. You can adjust the number of seats in your subscription at any time from your customer portal.</p>
-            </div>
-
+        <h3 class="text-white font-semibold mb-3">No external storage</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">SETKI reads your CRM data through the official Zoho API and stores nothing outside your Zoho organization.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <span class="text-blue-400 text-xl font-bold">✓</span>
         </div>
+        <h3 class="text-white font-semibold mb-3">Reviewed by Zoho</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Every extension on Zoho Marketplace passes a security and quality review before it's listed publicly.</p>
+      </div>
+      <div class="text-center">
+        <div class="w-12 h-12 bg-blue-500/20 border border-blue-500/30 rounded-xl flex items-center justify-center mx-auto mb-4">
+          <span class="text-blue-400 text-xl font-bold">✓</span>
+        </div>
+        <h3 class="text-white font-semibold mb-3">Open about what we do</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">What SETKI accesses, why, and what it doesn't touch — documented in our <a href="/privacy" class="text-blue-400 hover:underline">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </section>
 
-    </section>
+  <!-- 10. WHAT'S COMING -->
+  <section class="bg-slate-900 py-24">
+    <div class="max-w-xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">What's coming</h2>
+      <p class="text-slate-400 mb-12">SETKI is actively developed. Here's what's in the works:</p>
+      <div class="text-left space-y-3 mb-10">
+        <p class="text-slate-500 text-xs uppercase tracking-wider font-semibold pb-1">In development</p>
+        <div class="feature-card rounded-xl px-5 py-4 flex items-center gap-3">
+          <span class="text-blue-400 font-bold shrink-0">↳</span>
+          <span class="text-slate-300 text-sm">Row expansion — open subitems directly in the list (TreeGrid)</span>
+        </div>
+        <p class="text-slate-500 text-xs uppercase tracking-wider font-semibold pt-4 pb-1">Planned</p>
+        <div class="feature-card rounded-xl px-5 py-4 flex items-center gap-3">
+          <span class="text-slate-600 shrink-0">↳</span>
+          <span class="text-slate-400 text-sm">Dark theme</span>
+        </div>
+        <div class="feature-card rounded-xl px-5 py-4 flex items-center gap-3">
+          <span class="text-slate-600 shrink-0">↳</span>
+          <span class="text-slate-400 text-sm">Export to CSV / Excel</span>
+        </div>
+        <div class="feature-card rounded-xl px-5 py-4 flex items-center gap-3">
+          <span class="text-slate-600 shrink-0">↳</span>
+          <span class="text-slate-400 text-sm">Real-time updates via WebSockets</span>
+        </div>
+      </div>
+      <p class="text-slate-500 text-sm">Have a feature request? <a href="mailto:hello@setki.dev" class="text-blue-400 hover:underline">hello@setki.dev</a></p>
+    </div>
+  </section>
 
-    <footer class="text-center py-10 border-t border-slate-800 text-slate-500 text-sm">
+  <!-- 11. FOOTER CTA -->
+  <section class="max-w-3xl mx-auto px-6 py-24 text-center">
+    <h2 class="text-4xl font-bold text-white mb-6">Ready to get your time back?</h2>
+    <p class="text-slate-400 text-lg mb-10 leading-relaxed">
+      Install SETKI free for your team of up to 3.<br>No credit card. No setup calls. Just install and start editing.
+    </p>
+    <a href="#" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-10 py-4 rounded-xl transition-colors text-lg mb-6">
+      Install free on Zoho Marketplace
+    </a>
+    <p class="text-slate-500 text-sm">Questions about Pro? <a href="mailto:hello@setki.dev" class="text-blue-400 hover:underline">hello@setki.dev</a></p>
+  </section>
 
-        <p>© 2026 SETKI Project. All rights reserved. <br> Private Beta for Enterprise Clients.</p>
-
-    </footer>
-
-
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-800 py-10 text-center text-slate-600 text-sm">
+    <p>© 2026 SETKI. All rights reserved.</p>
+    <p class="mt-2"><a href="/privacy" class="hover:text-slate-400 transition-colors">Privacy Policy</a></p>
+  </footer>
 
 </body>
-
 </html>
