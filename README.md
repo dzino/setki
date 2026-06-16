@@ -1,33 +1,43 @@
-# SETKI TreeGrid 🚀
+# SETKI Grid for Zoho CRM
 
-**The most performant, Signals-based Data Grid for complex hierarchical data.**
+**Inline edit, bulk update, and data visualization — directly in your Zoho CRM list.**
 
-SETKI is a high-performance TreeGrid component engineered for web applications that handle massive datasets. By leveraging **Signals**, it achieves sub-millisecond rendering updates even with 500,000+ cells.
+SETKI Grid replaces the standard Zoho CRM list view with a fully editable, high-performance data table. Edit any field inline, bulk-update dozens of rows at once, and see sparklines and color highlights right in the list — no extra pages, no exports, no switching tools.
 
-🔗 **Official Website:** [setki.dev](https://setki.dev)  
-📦 **NPM:** [@dzino/setki](https://www.npmjs.com/package/@dzino/setki)
-
----
-
-## 🔥 Key Features
-
-* **Signals-Powered Rendering:** Zero-lag DOM updates using modern signal-based reactivity.
-* **Infinite Deep Nesting:** Native support for complex hierarchical tree structures.
-* **Extreme Scalability:** Effortlessly handle 500+ rows per level with virtual scrolling.
+🔗 **Website:** [setki.dev](https://setki.dev)  
+📖 **Config Reference:** [setki.dev/docs](https://setki.dev/docs/)  
+🛒 **Zoho Marketplace:** coming soon
 
 ---
 
-## 💎 Commercial License & Pricing
+## Features
 
-SETKI is a commercial product. While you can evaluate the library for free, a commercial license is required for production use.
+- **Inline edit** — all field types: text, numbers, picklists, lookups, dates, checkboxes, multi-select
+- **Bulk edit** — select multiple rows, update one field for all at once
+- **Sparklines** — mini-charts directly in cells
+- **Color thresholds** — red / yellow / green highlights by value
+- **Star ratings** — render numeric fields as star rating
+- **Deadline highlighting** — overdue and today dates highlighted automatically
+- **Aggregation footer** — sum & average per column
+- **Pin and hide columns**
+- **Role-based presets** — different views for Admins, Managers, Reps
+- **Admin configuration panel** — configure once, everyone sees exactly what they need
+- **8 languages**
 
-| Feature | Community (Free) | Pro License |
+---
+
+## Pricing
+
+| | Free | Pro |
 | :--- | :---: | :---: |
-| Unlimited Rows/Levels | ✅ | ✅ |
-| Core TreeGrid Logic | ✅ | ✅ |
-| **Advanced Export (Excel/PDF)** | ❌ | ✅ |
-| **Priority Support** | ❌ | ✅ |
-| **Commercial Usage** | ❌ | ✅ |
-| **Price** | $0 | **$49.99 / year** |
+| Full functionality | ✅ | ✅ |
+| Team size | up to 3 users | 4+ users |
+| Price | $0 forever | from $12 / user / month |
 
-👉 **[Get a Pro License at setki.dev](https://setki.dev)**
+👉 **[Get Pro at setki.dev/buy](https://setki.dev/buy)**
+
+---
+
+## Privacy Policy
+
+[setki.dev/privacy](https://setki.dev/privacy)
