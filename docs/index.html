@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Config Reference — SETKI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    pre { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(51, 65, 85, 0.5); border-radius: 0.75rem; padding: 1rem; overflow-x: auto; font-size: 0.8rem; line-height: 1.6; }
+    code { font-family: 'Fira Code', 'Cascadia Code', monospace; }
+    pre code { color: #94a3b8; }
+    :not(pre) > code { background: rgba(51,65,85,0.5); color: #7dd3fc; padding: 0.15em 0.4em; border-radius: 0.3rem; font-size: 0.85em; font-family: 'Fira Code', 'Cascadia Code', monospace; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    th { text-align: left; padding: 0.6rem 1rem; color: #64748b; font-weight: 500; border-bottom: 1px solid #1e293b; }
+    td { padding: 0.6rem 1rem; color: #94a3b8; border-bottom: 1px solid #0f172a; vertical-align: top; }
+    td:first-child code { color: #7dd3fc; }
+    h3 { scroll-margin-top: 2rem; }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-300 font-sans min-h-screen">
+
+  <!-- Nav -->
+  <header class="border-b border-slate-800 py-5 px-6 sticky top-0 bg-slate-950/95 backdrop-blur z-10">
+    <div class="max-w-4xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-white font-bold text-lg tracking-tight">SETKI</a>
+      <span class="text-slate-500 text-sm">Config Reference</span>
+      <a href="/" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">← setki.dev</a>
+    </div>
+  </header>
+
+  <div class="max-w-4xl mx-auto px-6 py-12">
+
+    <div class="mb-12">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">Documentation</p>
+      <h1 class="text-4xl font-bold text-white mb-4">SETKI Grid — Config Reference</h1>
+      <p class="text-slate-400 text-lg">Every field of the SETKI Grid configuration JSON. Paste a config directly into <strong class="text-slate-300">Settings → JSON editor</strong> inside the widget.</p>
+    </div>
+
+    <!-- Full schema -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">Full schema</h2>
+      <pre><code>{
+  "module": "Leads",
+  "editingEnabled": true,
+  "showSumsRow": true,
+  "filterVisible": false,
+  "addRowEnabled": true,
+  "multiEditEnabled": false,
+  "userSortsEnabled": true,
+  "defaultPerPage": 25,
+  "tableHeight": 0,
+  "hiddenKeys": [],
+  "pinnedKeys": [],
+  "columnEditable": {},
+  "columnAggregation": {},
+  "columnNumeric": {},
+  "columnText": {},
+  "columnDate": {},
+  "columnChart": {},
+  "adminFilters": [],
+  "adminSorts": [],
+  "roleMap": {},
+  "knownProfiles": []
+}</code></pre>
+    </section>
+
+    <!-- Field reference -->
+    <section class="mb-16">
+      <h2 class="text-xl font-bold text-white mb-8">Field reference</h2>
+      <div class="space-y-10">
+
+        <div id="module">
+          <h3 class="text-base font-semibold text-white mb-1"><code>module</code> · string</h3>
+          <p class="text-slate-400 text-sm mb-3">Zoho CRM API name of the module to display. Common values: <code>Leads</code>, <code>Contacts</code>, <code>Deals</code>, <code>Accounts</code>, <code>Tasks</code>.</p>
+          <pre><code>"module": "Leads"</code></pre>
+        </div>
+
+        <div id="editingEnabled">
+          <h3 class="text-base font-semibold text-white mb-1"><code>editingEnabled</code> · boolean</h3>
+          <p class="text-slate-400 text-sm mb-3">Allow inline cell editing. When <code>false</code> the table is read-only for all users.</p>
+          <pre><code>"editingEnabled": true</code></pre>
+        </div>
+
+        <div id="showSumsRow">
+          <h3 class="text-base font-semibold text-white mb-1"><code>showSumsRow</code> · boolean</h3>
+          <p class="text-slate-400 text-sm mb-3">Show the totals row (Σ / ~) below the table.</p>
+          <pre><code>"showSumsRow": true</code></pre>
+        </div>
+
+        <div id="filterVisible">
+          <h3 class="text-base font-semibold text-white mb-1"><code>filterVisible</code> · boolean</h3>
+          <p class="text-slate-400 text-sm mb-3">Show the filter input row under column headers by default.</p>
+          <pre><code>"filterVisible": false</code></pre>
+        </div>
+
+        <div id="addRowEnabled">
+          <h3 class="text-base font-semibold text-white mb-1"><code>addRowEnabled</code> · boolean</h3>
+          <p class="text-slate-400 text-sm mb-3">Allow adding new records via the inline row at the bottom of the table.</p>
+          <pre><code>"addRowEnabled": true</code></pre>
+        </div>
+
+        <div id="multiEditEnabled">
+          <h3 class="text-base font-semibold text-white mb-1"><code>multiEditEnabled</code> · boolean</h3>
+          <p class="text-slate-400 text-sm mb-3">Enable row checkboxes for bulk edit / bulk delete.</p>
+          <pre><code>"multiEditEnabled": false</code></pre>
+        </div>
+
+        <div id="userSortsEnabled">
+          <h3 class="text-base font-semibold text-white mb-1"><code>userSortsEnabled</code> · boolean</h3>
+          <p class="text-slate-400 text-sm mb-3">Allow users to change sorting. When <code>false</code>, only <code>adminSorts</code> apply.</p>
+          <pre><code>"userSortsEnabled": true</code></pre>
+        </div>
+
+        <div id="defaultPerPage">
+          <h3 class="text-base font-semibold text-white mb-1"><code>defaultPerPage</code> · number</h3>
+          <p class="text-slate-400 text-sm mb-3">Default number of rows per page. Allowed values: <code>10</code>, <code>25</code>, <code>50</code>, <code>100</code>, <code>200</code>.</p>
+          <pre><code>"defaultPerPage": 25</code></pre>
+        </div>
+
+        <div id="tableHeight">
+          <h3 class="text-base font-semibold text-white mb-1"><code>tableHeight</code> · number</h3>
+          <p class="text-slate-400 text-sm mb-3">Fixed table height in pixels. <code>0</code> means auto (fills the available space).</p>
+          <pre><code>"tableHeight": 500</code></pre>
+        </div>
+
+        <div id="hiddenKeys">
+          <h3 class="text-base font-semibold text-white mb-1"><code>hiddenKeys</code> · string[]</h3>
+          <p class="text-slate-400 text-sm mb-3">API field names of columns to hide. Hidden columns are not rendered but still exist in the schema.</p>
+          <pre><code>"hiddenKeys": ["Description", "Created_By"]</code></pre>
+        </div>
+
+        <div id="pinnedKeys">
+          <h3 class="text-base font-semibold text-white mb-1"><code>pinnedKeys</code> · string[]</h3>
+          <p class="text-slate-400 text-sm mb-3">API field names of columns to pin to the left edge.</p>
+          <pre><code>"pinnedKeys": ["Name", "Amount"]</code></pre>
+        </div>
+
+        <div id="columnEditable">
+          <h3 class="text-base font-semibold text-white mb-1"><code>columnEditable</code> · object</h3>
+          <p class="text-slate-400 text-sm mb-3">Per-column editable override. Keys are API field names, values are booleans.</p>
+          <pre><code>"columnEditable": {
+  "Name": true,
+  "Amount": true,
+  "Created_Time": false
+}</code></pre>
+        </div>
+
+        <div id="columnAggregation">
+          <h3 class="text-base font-semibold text-white mb-1"><code>columnAggregation</code> · object</h3>
+          <p class="text-slate-400 text-sm mb-3">Aggregation type for each column in the totals row.</p>
+          <table class="mb-3">
+            <thead><tr><th>Value</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>"sum"</code></td><td>Show Σ (sum)</td></tr>
+              <tr><td><code>"avg"</code></td><td>Show ~ (average)</td></tr>
+              <tr><td><code>"none"</code></td><td>Hide aggregation for this column</td></tr>
+            </tbody>
+          </table>
+          <pre><code>"columnAggregation": {
+  "Amount": "sum",
+  "Probability": "avg",
+  "Lead_Score": "none"
+}</code></pre>
+        </div>
+
+        <div id="columnNumeric">
+          <h3 class="text-base font-semibold text-white mb-1"><code>columnNumeric</code> · object</h3>
+          <p class="text-slate-400 text-sm mb-3">Display settings for number and stars columns.</p>
+          <pre><code>"columnNumeric": {
+  "Amount": {
+    "decimalPlaces": 2,
+    "suffix": "₽",
+    "stockMode": false,
+    "thresholdsEnabled": true,
+    "thresholdLow": 0,
+    "thresholdHigh": 100000,
+    "thresholdLowColor": "#fbebeb",
+    "thresholdHighColor": "#e8f0fe"
+  },
+  "Lead_Score": {
+    "stars": true
+  }
+}</code></pre>
+          <table class="mt-3">
+            <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>stars</code></td><td>boolean</td><td>Render as star rating instead of number</td></tr>
+              <tr><td><code>stockMode</code></td><td>boolean</td><td>Show ▲/▼ arrows relative to <code>stockThreshold</code></td></tr>
+              <tr><td><code>stockThreshold</code></td><td>number</td><td>Baseline value for stock arrows (default <code>0</code>)</td></tr>
+              <tr><td><code>thresholdsEnabled</code></td><td>boolean</td><td>Enable cell background color highlights</td></tr>
+              <tr><td><code>thresholdLow</code></td><td>number</td><td>Value below which low-color is applied</td></tr>
+              <tr><td><code>thresholdHigh</code></td><td>number</td><td>Value above which high-color is applied</td></tr>
+              <tr><td><code>thresholdLowColor</code></td><td>string</td><td>Hex color for low threshold background (default <code>#fbebeb</code>)</td></tr>
+              <tr><td><code>thresholdHighColor</code></td><td>string</td><td>Hex color for high threshold background (default <code>#e8f0fe</code>)</td></tr>
+              <tr><td><code>decimalPlaces</code></td><td>number</td><td>Decimal places to show (0–10)</td></tr>
+              <tr><td><code>suffix</code></td><td>string</td><td>Suffix appended to the value, e.g. <code>"₽"</code>, <code>"$"</code>, <code>" kg"</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="columnText">
+          <h3 class="text-base font-semibold text-white mb-1"><code>columnText</code> · object</h3>
+          <p class="text-slate-400 text-sm mb-3">Display settings for text/lookup/owner columns.</p>
+          <pre><code>"columnText": {
+  "Owner": { "avatarEnabled": true },
+  "Contact_Name": { "avatarEnabled": false }
+}</code></pre>
+          <table class="mt-3">
+            <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>avatarEnabled</code></td><td>boolean</td><td>Show avatar circle with initials next to the name (default <code>true</code>)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="columnDate">
+          <h3 class="text-base font-semibold text-white mb-1"><code>columnDate</code> · object</h3>
+          <p class="text-slate-400 text-sm mb-3">Display settings for date and datetime columns.</p>
+          <pre><code>"columnDate": {
+  "Closing_Date": {
+    "deadlineHighlight": true,
+    "deadlineColorToday": "#f5a500",
+    "deadlineColorOverdue": "#e05555"
+  }
+}</code></pre>
+          <table class="mt-3">
+            <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>deadlineHighlight</code></td><td>boolean</td><td>Highlight overdue / today dates with color (default <code>true</code>)</td></tr>
+              <tr><td><code>deadlineColorToday</code></td><td>string</td><td>Hex color for "today" highlight (default <code>#f5a500</code>)</td></tr>
+              <tr><td><code>deadlineColorOverdue</code></td><td>string</td><td>Hex color for overdue highlight (default <code>#e05555</code>)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="columnChart">
+          <h3 class="text-base font-semibold text-white mb-1"><code>columnChart</code> · object</h3>
+          <p class="text-slate-400 text-sm mb-3">Sparkline chart settings for textarea columns.</p>
+          <pre><code>"columnChart": {
+  "Revenue_Chart": {
+    "sourceModule": "Deals",
+    "valueField": "Amount",
+    "labelField": "Closing_Date",
+    "sortField": "Closing_Date",
+    "sortOrder": "asc",
+    "maxPoints": 12,
+    "filters": [
+      {
+        "field": "Account_Name",
+        "operator": "equals",
+        "valueColumn": "Account_Name"
+      }
+    ]
+  }
+}</code></pre>
+          <table class="mt-3 mb-6">
+            <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>sourceModule</code></td><td>string</td><td>Zoho CRM module to fetch chart data from</td></tr>
+              <tr><td><code>valueField</code></td><td>string</td><td>API field name for Y-axis values (must be numeric)</td></tr>
+              <tr><td><code>labelField</code></td><td>string</td><td>API field name for X-axis labels (e.g. a date field)</td></tr>
+              <tr><td><code>sortField</code></td><td>string</td><td>Field used to sort fetched records</td></tr>
+              <tr><td><code>sortOrder</code></td><td><code>"asc"</code> | <code>"desc"</code></td><td>Sort direction (default <code>"asc"</code>)</td></tr>
+              <tr><td><code>maxPoints</code></td><td>number</td><td>Maximum data points; oldest are trimmed (default <code>100</code>)</td></tr>
+              <tr><td><code>filters</code></td><td>ChartFilter[]</td><td>Filters applied when fetching chart data</td></tr>
+            </tbody>
+          </table>
+          <p class="text-slate-500 text-xs uppercase tracking-wider font-semibold mb-2">ChartFilter fields</p>
+          <table>
+            <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>field</code></td><td>string</td><td>API field name in the source module to filter on</td></tr>
+              <tr><td><code>operator</code></td><td>string</td><td><code>equals</code>, <code>not_equal</code>, <code>contains</code>, <code>starts_with</code>, <code>ends_with</code>, <code>greater_than</code>, <code>less_than</code>, <code>greater_equal</code>, <code>less_equal</code></td></tr>
+              <tr><td><code>valueColumn</code></td><td>string</td><td>API field name in the current row whose value is used as the filter value</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="adminFilters">
+          <h3 class="text-base font-semibold text-white mb-1"><code>adminFilters</code> · FilterCondition[]</h3>
+          <p class="text-slate-400 text-sm mb-3">Preset filters applied to every user's view. Users cannot remove them.</p>
+          <pre><code>"adminFilters": [
+  { "field": "Lead_Status", "operator": "not_equal", "value": "Dead" },
+  { "field": "Amount", "operator": "greater_than", "value": 0 }
+]</code></pre>
+          <table class="mt-3">
+            <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>field</code></td><td>string</td><td>API field name</td></tr>
+              <tr><td><code>operator</code></td><td>string</td><td><code>equals</code>, <code>not_equal</code>, <code>contains</code>, <code>not_contains</code>, <code>starts_with</code>, <code>ends_with</code>, <code>greater_than</code>, <code>less_than</code>, <code>greater_equal</code>, <code>less_equal</code></td></tr>
+              <tr><td><code>value</code></td><td>string | number</td><td>Filter value</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="adminSorts">
+          <h3 class="text-base font-semibold text-white mb-1"><code>adminSorts</code> · SortConfig[]</h3>
+          <p class="text-slate-400 text-sm mb-3">Preset sort order applied when the table loads (before any user interaction).</p>
+          <pre><code>"adminSorts": [
+  { "field": "Amount", "direction": "desc" },
+  { "field": "Closing_Date", "direction": "asc" }
+]</code></pre>
+          <table class="mt-3">
+            <thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead>
+            <tbody>
+              <tr><td><code>field</code></td><td>string</td><td>API field name</td></tr>
+              <tr><td><code>direction</code></td><td><code>"asc"</code> | <code>"desc"</code></td><td>Sort direction</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="roleMap">
+          <h3 class="text-base font-semibold text-white mb-1"><code>roleMap</code> · object</h3>
+          <p class="text-slate-400 text-sm mb-3">Maps Zoho CRM Profile names to preset IDs. When a profile has a mapping the user sees the preset view instead of the base config.</p>
+          <pre><code>"roleMap": {
+  "Sales Manager": "preset_abc123",
+  "Support": "preset_xyz789"
+}</code></pre>
+        </div>
+
+        <div id="knownProfiles">
+          <h3 class="text-base font-semibold text-white mb-1"><code>knownProfiles</code> · string[]</h3>
+          <p class="text-slate-400 text-sm mb-3">List of profile names that appear in the Roles tab. Auto-populated when the Roles section is opened.</p>
+          <pre><code>"knownProfiles": ["Administrator", "Sales Manager", "Support"]</code></pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Examples -->
+    <section class="mb-16">
+      <h2 class="text-xl font-bold text-white mb-8">Example configs</h2>
+      <div class="space-y-10">
+
+        <div>
+          <h3 class="text-base font-semibold text-white mb-3">Minimal — read-only Leads table</h3>
+          <pre><code>{
+  "module": "Leads",
+  "editingEnabled": false,
+  "showSumsRow": false,
+  "filterVisible": false,
+  "addRowEnabled": false,
+  "multiEditEnabled": false,
+  "userSortsEnabled": true,
+  "defaultPerPage": 50,
+  "tableHeight": 0,
+  "hiddenKeys": ["Description", "Created_By", "Modified_By"],
+  "pinnedKeys": ["Name"],
+  "columnEditable": {},
+  "columnAggregation": {},
+  "columnNumeric": {},
+  "columnText": {},
+  "columnDate": {},
+  "columnChart": {},
+  "adminFilters": [],
+  "adminSorts": [{ "field": "Created_Time", "direction": "desc" }],
+  "roleMap": {},
+  "knownProfiles": []
+}</code></pre>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold text-white mb-3">Sales pipeline — Deals with amount highlights and deadline colors</h3>
+          <pre><code>{
+  "module": "Deals",
+  "editingEnabled": true,
+  "showSumsRow": true,
+  "filterVisible": true,
+  "addRowEnabled": true,
+  "multiEditEnabled": true,
+  "userSortsEnabled": true,
+  "defaultPerPage": 25,
+  "tableHeight": 0,
+  "hiddenKeys": ["Description"],
+  "pinnedKeys": ["Deal_Name"],
+  "columnEditable": {
+    "Amount": true,
+    "Stage": true,
+    "Closing_Date": true
+  },
+  "columnAggregation": {
+    "Amount": "sum",
+    "Probability": "avg"
+  },
+  "columnNumeric": {
+    "Amount": {
+      "decimalPlaces": 0,
+      "suffix": " ₽",
+      "thresholdsEnabled": true,
+      "thresholdLow": 10000,
+      "thresholdHigh": 500000,
+      "thresholdLowColor": "#fbebeb",
+      "thresholdHighColor": "#e8f5e9"
+    },
+    "Probability": {
+      "suffix": " %",
+      "stockMode": true,
+      "stockThreshold": 50
+    }
+  },
+  "columnText": {
+    "Owner": { "avatarEnabled": true }
+  },
+  "columnDate": {
+    "Closing_Date": {
+      "deadlineHighlight": true,
+      "deadlineColorToday": "#f5a500",
+      "deadlineColorOverdue": "#e05555"
+    }
+  },
+  "columnChart": {},
+  "adminFilters": [
+    { "field": "Stage", "operator": "not_equal", "value": "Closed Lost" }
+  ],
+  "adminSorts": [
+    { "field": "Closing_Date", "direction": "asc" }
+  ],
+  "roleMap": {},
+  "knownProfiles": []
+}</code></pre>
+        </div>
+
+        <div>
+          <h3 class="text-base font-semibold text-white mb-3">Contacts with avatars and sparklines</h3>
+          <pre><code>{
+  "module": "Contacts",
+  "editingEnabled": true,
+  "showSumsRow": false,
+  "filterVisible": false,
+  "addRowEnabled": false,
+  "multiEditEnabled": false,
+  "userSortsEnabled": true,
+  "defaultPerPage": 50,
+  "tableHeight": 0,
+  "hiddenKeys": [],
+  "pinnedKeys": ["Full_Name"],
+  "columnEditable": {
+    "Phone": true,
+    "Email": true
+  },
+  "columnAggregation": {},
+  "columnNumeric": {
+    "Lead_Score": { "stars": true }
+  },
+  "columnText": {
+    "Full_Name": { "avatarEnabled": true },
+    "Account_Name": { "avatarEnabled": false }
+  },
+  "columnDate": {},
+  "columnChart": {
+    "Deal_History": {
+      "sourceModule": "Deals",
+      "valueField": "Amount",
+      "labelField": "Closing_Date",
+      "sortField": "Closing_Date",
+      "sortOrder": "asc",
+      "maxPoints": 10,
+      "filters": [
+        {
+          "field": "Contact_Name",
+          "operator": "equals",
+          "valueColumn": "Full_Name"
+        }
+      ]
+    }
+  },
+  "adminFilters": [],
+  "adminSorts": [{ "field": "Last_Name", "direction": "asc" }],
+  "roleMap": {},
+  "knownProfiles": []
+}</code></pre>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-600 text-sm">
+    <p>© 2026 SETKI. All rights reserved. · <a href="/privacy" class="hover:text-slate-400 transition-colors">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get SETKI Pro — Choose your seats</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.3); }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+    input[type=number] { -moz-appearance: textfield; }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-200 font-sans min-h-screen flex flex-col items-center justify-center px-6 py-16">
+
+  <a href="/" class="text-slate-500 hover:text-slate-300 text-sm mb-12 transition-colors">← Back to setki.dev</a>
+
+  <div class="w-full max-w-md">
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-3">SETKI Pro</p>
+      <h1 class="text-3xl font-bold text-white mb-3">How many seats do you need?</h1>
+      <p class="text-slate-400 text-sm leading-relaxed">
+        1 seat = 1 Zoho CRM user. You can buy for a team, a department, or keep extras in reserve.
+      </p>
+    </div>
+
+    <!-- Form card -->
+    <div class="card rounded-2xl p-8 mb-6">
+
+      <!-- Plan toggle -->
+      <label class="block text-slate-400 text-sm mb-3">Billing period</label>
+      <div class="grid grid-cols-2 gap-2 mb-8">
+        <button id="plan-monthly" onclick="setPlan('monthly')"
+          class="plan-btn rounded-xl border-2 border-blue-500 bg-blue-500/10 px-4 py-3 text-left transition-all">
+          <p class="text-white font-semibold text-sm">Monthly</p>
+          <p class="text-blue-300 text-xs mt-0.5">$15 / user / month</p>
+        </button>
+        <button id="plan-annual" onclick="setPlan('annual')"
+          class="plan-btn rounded-xl border-2 border-slate-700 px-4 py-3 text-left transition-all hover:border-slate-500">
+          <p class="text-white font-semibold text-sm">Annual <span class="text-emerald-400 text-xs font-normal">save 20%</span></p>
+          <p class="text-slate-400 text-xs mt-0.5">$12 / user / month</p>
+        </button>
+      </div>
+
+      <!-- Stepper -->
+      <label class="block text-slate-400 text-sm mb-3">Number of seats <span class="text-slate-600">(minimum 4)</span></label>
+      <p class="text-slate-500 text-xs mb-3">Includes yourself. A team of 5 = 5 seats.</p>
+      <div class="flex items-center justify-center gap-3 mb-8">
+        <button id="btn-minus"
+          class="w-12 h-12 shrink-0 rounded-xl border border-slate-600 hover:border-blue-500 text-white text-xl font-bold transition-colors flex items-center justify-center select-none"
+          onclick="changeSeats(-1)">−</button>
+        <input id="seats-input" type="number" value="4" min="4"
+          class="w-28 text-center text-3xl font-bold text-white bg-transparent border border-slate-700 rounded-xl h-12 focus:outline-none focus:border-blue-500 transition-colors"
+          oninput="onInputChange(this)">
+        <button id="btn-plus"
+          class="w-12 h-12 shrink-0 rounded-xl border border-slate-600 hover:border-blue-500 text-white text-xl font-bold transition-colors flex items-center justify-center select-none"
+          onclick="changeSeats(1)">+</button>
+      </div>
+
+      <!-- Price summary -->
+      <div class="bg-slate-900 rounded-xl p-4 mb-8">
+        <div class="flex justify-between items-center">
+          <span class="text-slate-500 text-sm">Total</span>
+          <span id="price-total" class="text-white font-bold text-lg">$60 / month</span>
+        </div>
+        <p id="price-per-user" class="text-slate-600 text-xs text-right mt-1">$15 × 4 users</p>
+      </div>
+
+      <!-- CTA -->
+      <a id="checkout-btn" href="#"
+        class="block text-center bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-4 rounded-xl transition-colors text-base">
+        Continue to checkout →
+      </a>
+
+    </div>
+
+    <!-- Free tier note -->
+    <p class="text-center text-slate-600 text-sm">
+      Teams up to 3 users? <a href="https://marketplace.zoho.com" class="text-blue-500 hover:underline">Install free on Zoho Marketplace →</a>
+    </p>
+
+  </div>
+
+  <script>
+    const URLS = {
+      monthly: 'https://setki.lemonsqueezy.com/checkout/buy/9197d4ad-fd13-46e0-9739-34308ff4c163',
+      annual:  'https://setki.lemonsqueezy.com/checkout/buy/6be4a7f5-9a3e-417a-bdf7-d0181c58b11b'
+    };
+    const PRICES = { monthly: 15, annual: 144 };
+    const LABELS = { monthly: 'month', annual: 'year' };
+    const MIN_SEATS = 4;
+    let currentPlan = 'monthly';
+
+    function getSeats() {
+      const val = parseInt(document.getElementById('seats-input').value, 10);
+      return isNaN(val) || val < MIN_SEATS ? MIN_SEATS : val;
+    }
+
+    function setPlan(plan) {
+      currentPlan = plan;
+      const active   = 'border-blue-500 bg-blue-500/10';
+      const inactive = 'border-slate-700';
+      document.getElementById('plan-monthly').className =
+        `plan-btn rounded-xl border-2 px-4 py-3 text-left transition-all ${plan === 'monthly' ? active : inactive + ' hover:border-slate-500'}`;
+      document.getElementById('plan-annual').className =
+        `plan-btn rounded-xl border-2 px-4 py-3 text-left transition-all ${plan === 'annual' ? active : inactive + ' hover:border-slate-500'}`;
+      update();
+    }
+
+    function update() {
+      const seats = getSeats();
+      const price = PRICES[currentPlan];
+      const label = LABELS[currentPlan];
+      document.getElementById('seats-input').value = seats;
+      document.getElementById('price-total').textContent = `$${seats * price} / ${label}`;
+      document.getElementById('price-per-user').textContent = `$${price} × ${seats} users`;
+      document.getElementById('checkout-btn').href = `${URLS[currentPlan]}?quantity=${seats}`;
+      document.getElementById('btn-minus').disabled = seats <= MIN_SEATS;
+      document.getElementById('btn-minus').classList.toggle('opacity-30', seats <= MIN_SEATS);
+    }
+
+    function changeSeats(delta) {
+      const seats = getSeats();
+      const next = seats + delta;
+      if (next < MIN_SEATS) return;
+      document.getElementById('seats-input').value = next;
+      update();
+    }
+
+    function onInputChange(input) {
+      let val = parseInt(input.value, 10);
+      if (isNaN(val) || val < MIN_SEATS) val = MIN_SEATS;
+      input.value = val;
+      update();
+    }
+
+    const urlPlan = new URLSearchParams(window.location.search).get('plan');
+    if (urlPlan === 'annual') setPlan('annual');
+    else update();
+  </script>
+
+</body>
+</html>

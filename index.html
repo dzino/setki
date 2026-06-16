@@ -25,7 +25,7 @@
       Edit any record inline. Bulk-update dozens of rows at once. See trends right in the list — no extra pages, no exports, no switching tools.
     </p>
     <div class="flex flex-col sm:flex-row justify-center gap-4 mb-4">
-      <a href="#" class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base">
+      <a class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base cursor-pointer">
         Install free on Zoho Marketplace
       </a>
       <a href="#demo" class="text-slate-400 hover:text-white font-medium px-8 py-4 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors text-base">
@@ -212,63 +212,74 @@
       <p class="text-slate-300 italic leading-relaxed">"Set up SETKI for our Deals module: pin the Amount column, add sparklines from related Invoices, highlight red if Amount is under $1,000."</p>
     </div>
     <p class="text-slate-400 mb-8 leading-relaxed">Paste the output into SETKI's config editor — done in seconds.<br>No technical knowledge required.</p>
-    <a href="#" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Read the documentation →</a>
+    <a href="/docs/" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Read the documentation →</a>
   </section>
 
   <!-- 8. PRICING BLOCK -->
   <section class="bg-slate-900 py-24" id="pricing">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-3xl font-bold text-white text-center mb-4">Simple pricing. Full functionality from day one.</h2>
-      <p class="text-slate-400 text-center mb-16 text-lg max-w-2xl mx-auto">Both plans include everything — inline edit, bulk update, sparklines, role-based presets, admin panel. No feature gating.</p>
+      <p class="text-slate-400 text-center mb-12 text-lg max-w-2xl mx-auto">Both plans include everything. The only difference is team size.</p>
 
-      <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- Shared features -->
+      <ul class="grid sm:grid-cols-2 gap-x-12 gap-y-3 mb-12 max-w-2xl mx-auto">
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Inline edit — all field types</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Bulk edit</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Sparklines — mini-charts in cells</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Color thresholds — red / yellow / green</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Star ratings in cells</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Deadline highlighting — overdue & today</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Aggregation footer — sum & average</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Pin and hide columns</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Role-based presets</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Admin configuration panel</li>
+        <li class="flex items-center gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> 8 languages</li>
+      </ul>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
 
         <!-- Free -->
-        <div class="feature-card rounded-2xl p-8">
+        <div class="feature-card rounded-2xl p-8 flex flex-col">
           <p class="text-slate-400 text-sm font-semibold uppercase tracking-wider mb-2">Free</p>
           <p class="text-4xl font-bold text-white mb-1">$0</p>
           <p class="text-slate-500 text-sm mb-6">forever</p>
-          <p class="text-slate-400 text-sm mb-8">For teams up to 3 users</p>
-          <ul class="space-y-3 mb-10">
-            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Inline edit — all field types</li>
-            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Bulk edit</li>
-            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Sparklines and data visualization</li>
-            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Role-based presets</li>
-            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> Admin configuration panel</li>
-            <li class="flex items-start gap-3 text-slate-300 text-sm"><span class="text-blue-400 font-bold shrink-0">✓</span> 8 languages</li>
-          </ul>
-          <p class="text-slate-500 text-xs mb-6">No credit card. No time limit.</p>
-          <a href="#" class="block text-center border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+          <p class="text-slate-400 text-sm mt-auto mb-6">For teams up to 3 users</p>
+          <a class="block text-center border border-slate-600 hover:border-blue-500 text-slate-300 hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors cursor-pointer">
             Install free →
           </a>
         </div>
 
-        <!-- Pro (highlighted) -->
-        <div class="bg-blue-600/10 border-2 border-blue-500/50 rounded-2xl p-8 relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Recommended</div>
-          <p class="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-2">Pro</p>
-          <p class="text-4xl font-bold text-white mb-1">$9</p>
-          <p class="text-slate-400 text-sm mb-1">/ user / month, billed annually</p>
-          <p class="text-slate-500 text-xs mb-6">$12 / user / month billed monthly</p>
-          <p class="text-slate-400 text-sm mb-6">For teams of 4 or more</p>
-          <p class="text-slate-300 text-sm font-medium mb-4">Everything in Free, for your full team.</p>
-          <ol class="space-y-2 mb-10">
-            <li class="text-slate-400 text-sm flex gap-2"><span class="text-blue-400 font-bold shrink-0">1.</span> Purchase seats at setki.dev</li>
-            <li class="text-slate-400 text-sm flex gap-2"><span class="text-blue-400 font-bold shrink-0">2.</span> In SETKI settings, assign seats to specific Zoho users</li>
-            <li class="text-slate-400 text-sm flex gap-2"><span class="text-blue-400 font-bold shrink-0">3.</span> Each assigned user gets full access</li>
-          </ol>
-          <a href="#" class="block text-center bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
-            Get seats for your team →
+        <!-- Pro Monthly -->
+        <div class="feature-card rounded-2xl p-8 flex flex-col">
+          <p class="text-slate-400 text-sm font-semibold uppercase tracking-wider mb-2">Pro · Monthly</p>
+          <p class="text-4xl font-bold text-white mb-1">$15</p>
+          <p class="text-slate-500 text-sm mb-6">/ user / month</p>
+          <p class="text-slate-400 text-sm mt-auto mb-6">For teams of 4 or more</p>
+          <a href="/buy?plan=monthly" class="block text-center border border-blue-500 hover:bg-blue-500/10 text-blue-400 hover:text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+            Get seats →
+          </a>
+        </div>
+
+        <!-- Pro Annual -->
+        <div class="bg-blue-600/10 border-2 border-blue-500/50 rounded-2xl p-8 relative flex flex-col">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-500 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Save 20%</div>
+          <p class="text-blue-400 text-sm font-semibold uppercase tracking-wider mb-2">Pro · Annual</p>
+          <p class="text-4xl font-bold text-white mb-1">$12</p>
+          <p class="text-slate-500 text-sm mb-6">/ user / month</p>
+          <p class="text-slate-400 text-sm mt-auto mb-6">For teams of 4 or more</p>
+          <a href="/buy?plan=annual" class="block text-center bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-xl transition-colors">
+            Get seats →
           </a>
         </div>
 
       </div>
-      <p class="text-center text-slate-500 text-sm">Questions? <a href="mailto:hello@setki.dev" class="text-blue-400 hover:underline">hello@setki.dev</a></p>
+      <p class="text-center text-slate-500 text-sm">Questions? <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a></p>
     </div>
   </section>
 
   <!-- 9. TRUST BLOCK -->
-  <section class="max-w-5xl mx-auto px-6 py-24">
+  <section class="py-24">
+  <div class="max-w-5xl mx-auto px-6">
     <h2 class="text-3xl font-bold text-white text-center mb-16">Your data stays in Zoho</h2>
     <div class="grid md:grid-cols-3 gap-10">
       <div class="text-center">
@@ -293,47 +304,21 @@
         <p class="text-slate-400 text-sm leading-relaxed">What SETKI accesses, why, and what it doesn't touch — documented in our <a href="/privacy" class="text-blue-400 hover:underline">Privacy Policy</a>.</p>
       </div>
     </div>
-  </section>
-
-  <!-- 10. WHAT'S COMING -->
-  <section class="bg-slate-900 py-24">
-    <div class="max-w-xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">What's coming</h2>
-      <p class="text-slate-400 mb-12">SETKI is actively developed. Here's what's in the works:</p>
-      <div class="text-left space-y-3 mb-10">
-        <p class="text-slate-500 text-xs uppercase tracking-wider font-semibold pb-1">In development</p>
-        <div class="feature-card rounded-xl px-5 py-4 flex items-center gap-3">
-          <span class="text-blue-400 font-bold shrink-0">↳</span>
-          <span class="text-slate-300 text-sm">Row expansion — open subitems directly in the list (TreeGrid)</span>
-        </div>
-        <p class="text-slate-500 text-xs uppercase tracking-wider font-semibold pt-4 pb-1">Planned</p>
-        <div class="feature-card rounded-xl px-5 py-4 flex items-center gap-3">
-          <span class="text-slate-600 shrink-0">↳</span>
-          <span class="text-slate-400 text-sm">Dark theme</span>
-        </div>
-        <div class="feature-card rounded-xl px-5 py-4 flex items-center gap-3">
-          <span class="text-slate-600 shrink-0">↳</span>
-          <span class="text-slate-400 text-sm">Export to CSV / Excel</span>
-        </div>
-        <div class="feature-card rounded-xl px-5 py-4 flex items-center gap-3">
-          <span class="text-slate-600 shrink-0">↳</span>
-          <span class="text-slate-400 text-sm">Real-time updates via WebSockets</span>
-        </div>
-      </div>
-      <p class="text-slate-500 text-sm">Have a feature request? <a href="mailto:hello@setki.dev" class="text-blue-400 hover:underline">hello@setki.dev</a></p>
-    </div>
+  </div>
   </section>
 
   <!-- 11. FOOTER CTA -->
-  <section class="max-w-3xl mx-auto px-6 py-24 text-center">
+  <section class="bg-slate-900 py-24">
+  <div class="max-w-3xl mx-auto px-6 text-center">
     <h2 class="text-4xl font-bold text-white mb-6">Ready to get your time back?</h2>
     <p class="text-slate-400 text-lg mb-10 leading-relaxed">
       Install SETKI free for your team of up to 3.<br>No credit card. No setup calls. Just install and start editing.
     </p>
-    <a href="#" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-10 py-4 rounded-xl transition-colors text-lg mb-6">
+    <a class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-10 py-4 rounded-xl transition-colors text-lg mb-6 cursor-pointer">
       Install free on Zoho Marketplace
     </a>
-    <p class="text-slate-500 text-sm">Questions about Pro? <a href="mailto:hello@setki.dev" class="text-blue-400 hover:underline">hello@setki.dev</a></p>
+    <p class="text-slate-500 text-sm">Questions about Pro? <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a></p>
+  </div>
   </section>
 
   <!-- FOOTER -->
