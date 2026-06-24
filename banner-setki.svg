@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 340" width="740" height="340">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#06080d"/>
+      <stop offset="100%" stop-color="#10141e"/>
+    </linearGradient>
+    <linearGradient id="tableGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4f8ff"/>
+    </linearGradient>
+    <!-- Пятиконечная звезда: outer R=4.5, inner r=1.8, center at (0,0) -->
+    <symbol id="star" viewBox="-5 -5 10 10">
+      <polygon points="0,-4.5 1.06,-1.46 4.28,-1.39 1.71,0.56 2.65,3.64 0,1.8 -2.65,3.64 -1.71,0.56 -4.28,-1.39 -1.06,-1.46"/>
+    </symbol>
+    <clipPath id="tableClip">
+      <rect x="20" y="62" width="700" height="262" rx="5"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="740" height="340" fill="url(#bgGrad)"/>
+
+  <!-- Stars -->
+  <circle cx="44"  cy="16" r="1"   fill="#ffffff" opacity="0.6"/>
+  <circle cx="120" cy="10" r="0.8" fill="#ffffff" opacity="0.5"/>
+  <circle cx="200" cy="24" r="1"   fill="#ffffff" opacity="0.65"/>
+  <circle cx="290" cy="8"  r="0.8" fill="#ffffff" opacity="0.45"/>
+  <circle cx="360" cy="20" r="1"   fill="#ffffff" opacity="0.6"/>
+  <circle cx="448" cy="6"  r="0.8" fill="#ffffff" opacity="0.5"/>
+  <circle cx="520" cy="28" r="1"   fill="#ffffff" opacity="0.55"/>
+  <circle cx="600" cy="12" r="0.8" fill="#ffffff" opacity="0.45"/>
+  <circle cx="668" cy="24" r="1"   fill="#ffffff" opacity="0.6"/>
+  <circle cx="724" cy="10" r="0.8" fill="#ffffff" opacity="0.5"/>
+  <circle cx="78"  cy="44" r="0.8" fill="#ffffff" opacity="0.4"/>
+  <circle cx="168" cy="50" r="0.8" fill="#ffffff" opacity="0.35"/>
+  <circle cx="330" cy="42" r="0.8" fill="#ffffff" opacity="0.4"/>
+  <circle cx="500" cy="46" r="0.8" fill="#ffffff" opacity="0.35"/>
+  <circle cx="638" cy="40" r="0.8" fill="#ffffff" opacity="0.4"/>
+
+  <!-- TABLE -->
+  <g clip-path="url(#tableClip)">
+
+    <!-- Body -->
+    <rect x="20" y="62" width="700" height="262" fill="url(#tableGrad)"/>
+
+    <!-- Header -->
+    <rect x="20" y="62" width="700" height="22" fill="#112040"/>
+
+    <!-- Alternating rows (y: 84+29=113, +29=142... rows 2,4,6,8) -->
+    <rect x="20" y="113" width="700" height="29" fill="#f0f6ff"/>
+    <rect x="20" y="171" width="700" height="29" fill="#f0f6ff"/>
+    <rect x="20" y="229" width="700" height="29" fill="#f0f6ff"/>
+    <rect x="20" y="287" width="700" height="29" fill="#f0f6ff"/>
+
+    <!-- Column dividers: 6 cols → dividers at 188, 296, 404, 504, 612 -->
+    <line x1="188" y1="62"  x2="188" y2="324" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="296" y1="62"  x2="296" y2="324" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="404" y1="62"  x2="404" y2="324" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="504" y1="62"  x2="504" y2="324" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="612" y1="62"  x2="612" y2="324" stroke="#7aa0bc" stroke-width="1"/>
+
+    <!-- Row dividers (header bottom + 8 rows of 29px) -->
+    <line x1="20" y1="84"  x2="720" y2="84"  stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="20" y1="113" x2="720" y2="113" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="20" y1="142" x2="720" y2="142" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="20" y1="171" x2="720" y2="171" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="20" y1="200" x2="720" y2="200" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="20" y1="229" x2="720" y2="229" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="20" y1="258" x2="720" y2="258" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="20" y1="287" x2="720" y2="287" stroke="#7aa0bc" stroke-width="1"/>
+    <line x1="20" y1="316" x2="720" y2="316" stroke="#7aa0bc" stroke-width="1"/>
+
+    <!-- Data stubs — col 1 (x=28) -->
+    <rect x="28" y="91"  width="118" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="28" y="120" width="104" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="28" y="149" width="124" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="28" y="178" width="96"  height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="28" y="207" width="112" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="28" y="236" width="100" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="28" y="265" width="118" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="28" y="294" width="88"  height="6" fill="#c0d4e8" rx="2"/>
+
+    <!-- Data stubs — col 2 (x=196) -->
+    <rect x="196" y="91"  width="58" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="196" y="120" width="44" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="196" y="149" width="44" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="196" y="178" width="40" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="196" y="207" width="58" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="196" y="236" width="50" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="196" y="265" width="62" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="196" y="294" width="46" height="6" fill="#c0d4e8" rx="2"/>
+
+    <!-- Data stubs — col 3 (x=304) -->
+    <rect x="304" y="91"  width="48" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="304" y="120" width="64" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="304" y="149" width="40" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="304" y="178" width="58" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="304" y="207" width="44" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="304" y="236" width="60" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="304" y="265" width="42" height="6" fill="#c0d4e8" rx="2"/>
+    <rect x="304" y="294" width="54" height="6" fill="#c0d4e8" rx="2"/>
+
+    <!-- Stars — col 4, пятиконечные звёзды (use x=rect_x-1, y=rect_y-1, w/h=10) -->
+    <!-- row1: 3.5★ -->
+    <use href="#star" x="411" y="89"  width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="423" y="89"  width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="435" y="89"  width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="447" y="89"  width="10" height="10" fill="#1a6cf4" opacity="0.35"/>
+    <use href="#star" x="459" y="89"  width="10" height="10" fill="#d0e2f8"/>
+    <!-- row2: 5★ -->
+    <use href="#star" x="411" y="118" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="423" y="118" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="435" y="118" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="447" y="118" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="459" y="118" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <!-- row3: 2★ -->
+    <use href="#star" x="411" y="147" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="423" y="147" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="435" y="147" width="10" height="10" fill="#d0e2f8"/>
+    <use href="#star" x="447" y="147" width="10" height="10" fill="#d0e2f8"/>
+    <use href="#star" x="459" y="147" width="10" height="10" fill="#d0e2f8"/>
+    <!-- row4: 3.5★ -->
+    <use href="#star" x="411" y="176" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="423" y="176" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="435" y="176" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="447" y="176" width="10" height="10" fill="#1a6cf4" opacity="0.35"/>
+    <use href="#star" x="459" y="176" width="10" height="10" fill="#d0e2f8"/>
+    <!-- row5: 4★ -->
+    <use href="#star" x="411" y="205" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="423" y="205" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="435" y="205" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="447" y="205" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="459" y="205" width="10" height="10" fill="#d0e2f8"/>
+    <!-- row6: 1★ -->
+    <use href="#star" x="411" y="234" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="423" y="234" width="10" height="10" fill="#d0e2f8"/>
+    <use href="#star" x="435" y="234" width="10" height="10" fill="#d0e2f8"/>
+    <use href="#star" x="447" y="234" width="10" height="10" fill="#d0e2f8"/>
+    <use href="#star" x="459" y="234" width="10" height="10" fill="#d0e2f8"/>
+    <!-- row7: 3.5★ -->
+    <use href="#star" x="411" y="263" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="423" y="263" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="435" y="263" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="447" y="263" width="10" height="10" fill="#1a6cf4" opacity="0.35"/>
+    <use href="#star" x="459" y="263" width="10" height="10" fill="#d0e2f8"/>
+    <!-- row8: 5★ -->
+    <use href="#star" x="411" y="292" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="423" y="292" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="435" y="292" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="447" y="292" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+    <use href="#star" x="459" y="292" width="10" height="10" fill="#1a6cf4" opacity="0.85"/>
+
+    <!-- Color threshold backgrounds — col 6 -->
+    <rect x="613" y="84"  width="106" height="29" fill="#22c55e" opacity="0.13" rx="1"/>
+    <rect x="613" y="113" width="106" height="29" fill="#22c55e" opacity="0.13" rx="1"/>
+    <rect x="613" y="142" width="106" height="29" fill="#ef4444" opacity="0.13" rx="1"/>
+    <rect x="613" y="171" width="106" height="29" fill="#f59e0b" opacity="0.13" rx="1"/>
+    <rect x="613" y="200" width="106" height="29" fill="#22c55e" opacity="0.13" rx="1"/>
+    <rect x="613" y="229" width="106" height="29" fill="#ef4444" opacity="0.13" rx="1"/>
+    <rect x="613" y="258" width="106" height="29" fill="#f59e0b" opacity="0.13" rx="1"/>
+    <rect x="613" y="287" width="106" height="29" fill="#22c55e" opacity="0.13" rx="1"/>
+
+    <!-- Data stubs — col 6, цвет совпадает с threshold -->
+    <rect x="620" y="91"  width="42" height="6" fill="#16a34a" rx="2" opacity="0.8"/>
+    <rect x="620" y="120" width="36" height="6" fill="#16a34a" rx="2" opacity="0.8"/>
+    <rect x="620" y="149" width="48" height="6" fill="#dc2626" rx="2" opacity="0.8"/>
+    <rect x="620" y="178" width="38" height="6" fill="#d97706" rx="2" opacity="0.8"/>
+    <rect x="620" y="207" width="44" height="6" fill="#16a34a" rx="2" opacity="0.8"/>
+    <rect x="620" y="236" width="32" height="6" fill="#dc2626" rx="2" opacity="0.8"/>
+    <rect x="620" y="265" width="46" height="6" fill="#d97706" rx="2" opacity="0.8"/>
+    <rect x="620" y="294" width="40" height="6" fill="#16a34a" rx="2" opacity="0.8"/>
+
+    <!-- Cursor cell: col 2, row 3 (y=142-171) -->
+    <rect x="189" y="143" width="106" height="28" fill="#1a6cf4" opacity="0.1" rx="1"/>
+    <rect x="189" y="143" width="106" height="28" fill="none" stroke="#1a6cf4" stroke-width="1.5" rx="1" opacity="0.9"/>
+    <rect x="244" y="148" width="1.5" height="14" fill="#1a6cf4" rx="0.5"/>
+
+    <!-- Mini sparklines — col 5 (x=512-608, row height=29px, amplitude ~20px) -->
+    <rect x="505" y="84" width="107" height="240" fill="#1a6cf4" opacity="0.03"/>
+    <!-- row1 y=84-113: uptrend -->
+    <polyline points="512,107 528,102 544,109 560,96  576,100 592,91  608,89"  fill="none" stroke="#1a6cf4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+    <!-- row2 y=113-142: downtrend -->
+    <polyline points="512,118 528,122 544,119 560,130 576,125 592,136 608,138" fill="none" stroke="#1a6cf4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+    <!-- row3 y=142-171: U-shape dip -->
+    <polyline points="512,148 528,158 544,165 560,167 576,161 592,153 608,147" fill="none" stroke="#1a6cf4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+    <!-- row4 y=171-200: volatile zigzag -->
+    <polyline points="512,196 528,178 544,192 560,176 576,189 592,177 608,195" fill="none" stroke="#1a6cf4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+    <!-- row5 y=200-229: sharp rise then plateau -->
+    <polyline points="512,224 528,219 544,210 560,207 576,205 592,204 608,206" fill="none" stroke="#1a6cf4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+    <!-- row6 y=229-258: peak in middle -->
+    <polyline points="512,250 528,248 544,235 560,233 576,237 592,247 608,252" fill="none" stroke="#1a6cf4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+    <!-- row7 y=258-287: gradual fall -->
+    <polyline points="512,263 528,266 544,269 560,272 576,275 592,279 608,282" fill="none" stroke="#1a6cf4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+    <!-- row8 y=287-316: wild bounce -->
+    <polyline points="512,293 528,311 544,295 560,310 576,292 592,308 608,291" fill="none" stroke="#1a6cf4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+
+    <!-- Hero sparkline — table portion -->
+    <polygon points="20,318 104,294 210,300 320,268 435,276 514,244 514,324 20,324"
+      fill="#1a6cf4" opacity="0.06"/>
+    <polyline points="20,318 104,294 210,300 320,268 435,276 514,244"
+      fill="none" stroke="#1a6cf4" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.07"/>
+    <polyline points="20,318 104,294 210,300 320,268 435,276 514,244"
+      fill="none" stroke="#1a6cf4" stroke-width="7"  stroke-linecap="round" stroke-linejoin="round" opacity="0.14"/>
+    <polyline points="20,318 104,294 210,300 320,268 435,276 514,244"
+      fill="none" stroke="#4a98ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  </g>
+
+  <!-- Hero sparkline — crossing table top into dark sky -->
+  <polyline points="514,244 552,62 592,36 632,18 668,6"
+    fill="none" stroke="#1a6cf4" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.07"/>
+  <polyline points="514,244 552,62 592,36 632,18 668,6"
+    fill="none" stroke="#2a7cf8" stroke-width="7"  stroke-linecap="round" stroke-linejoin="round" opacity="0.18"/>
+  <polyline points="514,244 552,62 592,36 632,18 668,6"
+    fill="none" stroke="#4a98ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/>
+  <polyline points="514,244 552,62 592,36 632,18 668,6"
+    fill="none" stroke="#80beff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Data points table -->
+  <circle cx="104" cy="294" r="4"   fill="#1a6cf4"/>
+  <circle cx="210" cy="300" r="4"   fill="#1a6cf4"/>
+  <circle cx="320" cy="268" r="4.5" fill="#1a6cf4"/>
+  <circle cx="435" cy="276" r="4"   fill="#1a6cf4"/>
+  <circle cx="514" cy="244" r="4.5" fill="#1a6cf4"/>
+
+  <!-- Data points sky -->
+  <circle cx="592" cy="36" r="4"   fill="#4a98ff"/>
+  <circle cx="632" cy="18" r="4"   fill="#4a98ff"/>
+  <circle cx="668" cy="6"  r="4"   fill="#4a98ff"/>
+
+  <!-- Terminal -->
+  <circle cx="668" cy="6" r="20" fill="#1a6cf4" opacity="0.06"/>
+  <circle cx="668" cy="6" r="12" fill="#1a6cf4" opacity="0.12"/>
+  <circle cx="668" cy="6" r="6"  fill="#1a6cf4" opacity="0.35"/>
+  <circle cx="668" cy="6" r="3"  fill="#a0d0ff"/>
+
+  <!-- Product name & tagline — dark sky zone, left of sparkline exit -->
+  <text x="30" y="32"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-size="26" font-weight="700" letter-spacing="3"
+    fill="#ffffff">SETKI</text>
+  <text x="31" y="48"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-size="12" letter-spacing="0.4"
+    fill="#6a90b8">Smart data grid for Zoho CRM</text>
+
+  <!-- Table border — рамка со скруглёнными углами как на иконке -->
+  <rect x="20" y="62" width="700" height="262" fill="none" stroke="#1d3a60" stroke-width="1.5" rx="5"/>
+
+  <!-- Table exit point — поверх рамки таблицы -->
+  <circle cx="552" cy="62" r="10" fill="#1a6cf4" opacity="0.15"/>
+  <circle cx="552" cy="62" r="5"  fill="#1a6cf4" opacity="0.4"/>
+  <circle cx="552" cy="62" r="2.5" fill="#a0d0ff"/>
+
+</svg>

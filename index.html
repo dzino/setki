@@ -5,57 +5,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SETKI Grid for Zoho CRM — Inline Edit, Bulk Update, Sparklines</title>
+  <link rel="icon" type="image/svg+xml" href="icon-setki.svg">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.3); }
     .role-badge { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 25px 60px rgba(0,0,0,0.7); animation: lb-in .18s ease; }
+    @keyframes lb-in { from { opacity: 0; transform: scale(0.93); } to { opacity: 1; transform: scale(1); } }
   </style>
 </head>
 
 <body class="bg-slate-950 text-slate-200 font-sans leading-relaxed">
 
-  <!-- 1. HERO -->
-  <section class="max-w-6xl mx-auto px-6 pt-24 pb-16 text-center">
-    <p class="text-blue-400 text-sm font-semibold uppercase tracking-widest mb-4">SETKI Grid for Zoho CRM</p>
-    <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-white leading-tight">
-      Your Zoho CRM list —<br>
-      <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">now fully editable</span>
-    </h1>
-    <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-      Edit any record inline. Bulk-update dozens of rows at once. See trends right in the list — no extra pages, no exports, no switching tools.
-    </p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-4">
-      <a class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-8 py-4 rounded-xl transition-colors text-base cursor-pointer">
-        Install free on Zoho Marketplace
-      </a>
-      <a href="#demo" class="text-slate-400 hover:text-white font-medium px-8 py-4 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors text-base">
-        See it in action ↓
-      </a>
-    </div>
-    <p class="text-slate-500 text-sm">Free for teams up to 3 users. No time limit.</p>
-  </section>
+  <!-- 1. HERO + BANNER -->
+  <section id="demo" class="max-w-6xl mx-auto px-6 min-h-screen flex flex-col justify-center gap-10 py-10">
 
-  <!-- Demo screenshot -->
-  <section id="demo" class="max-w-5xl mx-auto px-6 pb-24">
-    <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
-      <img src="demo.jpeg" alt="SETKI Grid in Zoho CRM" class="w-full h-auto"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'p-20 text-center text-slate-600\'>[demo screenshot]</div>'">
+    <!-- Row 1: big text | small text + buttons -->
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight">
+        Your Zoho CRM list —
+        <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">now fully editable</span>
+      </h1>
+      <div>
+        <p class="text-lg text-slate-400 leading-relaxed mb-6">
+          Edit any record inline. Bulk-update dozens of rows at once. See trends right in the list — no extra pages, no exports, no switching tools.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-3">
+          <a class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-base cursor-pointer">
+            Install free on Zoho Marketplace
+          </a>
+          <a href="#pricing" class="text-slate-400 hover:text-white font-medium px-6 py-3 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors text-base">
+            See pricing ↓
+          </a>
+        </div>
+        <p class="text-slate-500 text-sm">Free for teams up to 3 users. No time limit.</p>
+      </div>
     </div>
+
+    <!-- Row 2: banner -->
+    <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+      <img src="banner-setki.svg" alt="SETKI Grid on Zoho Marketplace" class="w-full h-auto">
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="flex justify-center pb-2">
+      <div class="flex flex-col items-center gap-1 text-slate-600 hover:text-slate-400 transition-colors cursor-pointer" onclick="document.querySelector('#pain').scrollIntoView({behavior:'smooth'})">
+        <span class="text-xs tracking-widest uppercase">Scroll</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="animate-bounce">
+          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+
   </section>
 
   <!-- 2. PAIN -->
-  <section class="max-w-3xl mx-auto px-6 pb-24 text-center">
-    <h2 class="text-3xl font-bold text-white mb-6">Zoho CRM is powerful.<br>Updating it shouldn't take hours.</h2>
-    <p class="text-slate-400 text-lg leading-relaxed mb-6">
-      Every field update means opening a record, making the change, saving, closing, and moving on to the next one. For a team that processes 50+ records a day, that's an hour of repetitive work — per person.
-    </p>
-    <p class="text-slate-300 text-lg font-medium">
-      SETKI lets your team edit directly in the list view.<br>What used to take an hour now takes minutes.
-    </p>
+  <section id="pain" class="bg-slate-900 py-24">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-white mb-6">Zoho CRM is powerful.<br>Updating it shouldn't take hours.</h2>
+      <p class="text-slate-400 text-lg leading-relaxed mb-6">
+        Every field update means opening a record, making the change, saving, closing, and moving on to the next one. For a team that processes 50+ records a day, that's an hour of repetitive work — per person.
+      </p>
+      <p class="text-slate-300 text-lg font-medium">
+        SETKI lets your team edit directly in the list view.<br>What used to take an hour now takes minutes.
+      </p>
+    </div>
   </section>
 
   <!-- 3. ROLE BLOCK: SALES MANAGER -->
-  <section class="max-w-6xl mx-auto px-6 pb-24">
+  <section class="max-w-6xl mx-auto px-6 py-24">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <p class="role-badge text-blue-400 mb-3">For Sales Teams</p>
@@ -69,16 +89,12 @@
         <ul class="space-y-3">
           <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Inline edit for all field types — including picklists, lookups, and multi-select</li>
           <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Bulk edit: select rows → change one field for all at once</li>
-          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Instant save with rollback on error</li>
-          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Sort by any column. Filter by any field.</li>
+<li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Sort by any column. Filter by any field.</li>
           <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Admin can preset default filters and sort order for the whole team</li>
         </ul>
       </div>
-      <div class="feature-card rounded-2xl p-8 flex items-center justify-center min-h-64">
-        <div class="text-center text-slate-600">
-          <p class="text-5xl mb-4">✏️</p>
-          <p class="text-sm">[ Screenshot: inline edit picklist ]</p>
-        </div>
+      <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+        <img src="screenshot-1-inline-edit.png" alt="SETKI Grid — inline edit" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
     </div>
   </section>
@@ -87,11 +103,8 @@
   <section class="bg-slate-900 py-24">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1 feature-card rounded-2xl p-8 flex items-center justify-center min-h-64">
-          <div class="text-center text-slate-600">
-            <p class="text-5xl mb-4">⚙️</p>
-            <p class="text-sm">[ Screenshot: admin settings panel ]</p>
-          </div>
+        <div class="order-2 md:order-1 rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+          <img src="screenshot-4-settings.png" alt="SETKI Grid — admin settings" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
         </div>
         <div class="order-1 md:order-2">
           <p class="role-badge text-purple-400 mb-3">For CRM Admins</p>
@@ -132,11 +145,8 @@
           <li class="flex items-start gap-3 text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span> Column totals — Sum or Average at the bottom of any numeric column</li>
         </ul>
       </div>
-      <div class="feature-card rounded-2xl p-8 flex items-center justify-center min-h-64">
-        <div class="text-center text-slate-600">
-          <p class="text-5xl mb-4">📈</p>
-          <p class="text-sm">[ Screenshot: sparklines + color thresholds ]</p>
-        </div>
+      <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+        <img src="screenshot-3-sparklines-deadline.png" alt="SETKI Grid — sparklines and color thresholds" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
     </div>
   </section>
@@ -177,27 +187,26 @@
             <tr>
               <td class="px-6 py-4 text-slate-300">5 people</td>
               <td class="px-6 py-4 text-right text-emerald-400 font-semibold">$22,875</td>
-              <td class="px-6 py-4 text-right text-slate-400">$540</td>
-              <td class="px-6 py-4 text-right text-white font-bold">42×</td>
+              <td class="px-6 py-4 text-right text-slate-400">$720</td>
+              <td class="px-6 py-4 text-right text-white font-bold">32×</td>
             </tr>
             <tr>
               <td class="px-6 py-4 text-slate-300">10 people</td>
               <td class="px-6 py-4 text-right text-emerald-400 font-semibold">$45,750</td>
-              <td class="px-6 py-4 text-right text-slate-400">$1,080</td>
-              <td class="px-6 py-4 text-right text-white font-bold">42×</td>
+              <td class="px-6 py-4 text-right text-slate-400">$1,440</td>
+              <td class="px-6 py-4 text-right text-white font-bold">32×</td>
             </tr>
             <tr>
               <td class="px-6 py-4 text-slate-300">20 people</td>
               <td class="px-6 py-4 text-right text-emerald-400 font-semibold">$91,500</td>
-              <td class="px-6 py-4 text-right text-slate-400">$2,160</td>
-              <td class="px-6 py-4 text-right text-white font-bold">42×</td>
+              <td class="px-6 py-4 text-right text-slate-400">$2,880</td>
+              <td class="px-6 py-4 text-right text-white font-bold">32×</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="text-slate-400 text-sm mb-3">$108/year per person against $4,575 in recovered time.</p>
-      <p class="text-slate-600 text-xs">* Based on 50 record updates/day × 1 min saved × 220 working days × $25/hr. Industry data: sales reps spend 41–66 min/day on CRM data entry (DevRev 2026, HubSpot / Nuclear Research).</p>
+      <p class="text-slate-400 text-sm mb-3">$144/year per person — billed annually.</p>
     </div>
   </section>
 
@@ -326,6 +335,24 @@
     <p>© 2026 SETKI. All rights reserved.</p>
     <p class="mt-2"><a href="/privacy" class="hover:text-slate-400 transition-colors">Privacy Policy</a></p>
   </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+      document.addEventListener('keydown', onLightboxKey);
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.removeEventListener('keydown', onLightboxKey);
+    }
+    function onLightboxKey(e) { if (e.key === 'Escape') closeLightbox(); }
+  </script>
 
 </body>
 </html>
