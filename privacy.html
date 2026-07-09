@@ -23,7 +23,7 @@
   <main class="max-w-3xl mx-auto px-6 py-16">
 
     <h1 class="text-3xl font-bold text-white mb-2">Privacy Policy</h1>
-    <p class="text-slate-500 text-sm mb-12">Last updated: 2026-06-16</p>
+    <p class="text-slate-500 text-sm mb-12">Last updated: 2026-07-09</p>
 
     <!-- 1 -->
     <section class="mb-10">
@@ -39,13 +39,16 @@
       <p class="text-slate-400 leading-relaxed mb-6">SETKI accesses records from your Zoho CRM account (contacts, leads, deals, and other modules you configure) via the official Zoho CRM API in order to display them in the grid widget. SETKI does not persistently store your CRM records. Data is accessed directly from Zoho and rendered in your browser. SETKI does not retain CRM records beyond what is necessary to display them during your active session.</p>
 
       <h3 class="text-base font-medium text-slate-200 mb-2">2.2 Seat Assignment Data</h3>
-      <p class="text-slate-400 leading-relaxed mb-6">When an administrator assigns Pro seats to Zoho users, seat assignment data is stored within <strong class="text-slate-300">Zoho's infrastructure</strong> and is subject to Zoho's own privacy policy. This data is managed by Zoho and can be removed by your administrator at any time.</p>
+      <p class="text-slate-400 leading-relaxed mb-6">When an administrator assigns Pro seats to Zoho users, we store the Zoho user IDs of assigned users on our backend, hosted on <strong class="text-slate-300">Cloudflare Workers and Cloudflare KV</strong>, together with the associated license key. This data is used solely to determine which users have Pro access and can be changed or removed by your administrator at any time.</p>
 
-      <h3 class="text-base font-medium text-slate-200 mb-2">2.3 Purchase and Billing Data</h3>
+      <h3 class="text-base font-medium text-slate-200 mb-2">2.3 Widget Settings and Presets</h3>
+      <p class="text-slate-400 leading-relaxed mb-6">Grid configuration (column layout, visible fields, tabs, and org-wide presets) is stored on our backend, hosted on <strong class="text-slate-300">Cloudflare Workers and Cloudflare KV</strong>, keyed to your organization. This data contains no Zoho CRM records — only display and layout preferences — and is retained until you change it or contact us to request deletion.</p>
+
+      <h3 class="text-base font-medium text-slate-200 mb-2">2.4 Purchase and Billing Data</h3>
       <p class="text-slate-400 leading-relaxed mb-6">Pro licenses are sold through <strong class="text-slate-300">LemonSqueezy</strong> (Lemon Squeezy LLC), a third-party payment processor. Billing information (such as name, email, and payment details) is collected and managed by LemonSqueezy. SETKI receives only a license key and subscription status.<br><br>LemonSqueezy's privacy policy: <a href="https://www.lemonsqueezy.com/privacy" class="text-blue-400 hover:underline" target="_blank" rel="noopener">lemonsqueezy.com/privacy</a></p>
 
-      <h3 class="text-base font-medium text-slate-200 mb-2">2.4 Technical and Operational Logs</h3>
-      <p class="text-slate-400 leading-relaxed">We maintain technical logs for security monitoring, error diagnosis, and license validation. These logs may include IP addresses, timestamps, and license key identifiers. Logs are processed on servers located in the <strong class="text-slate-300">United States</strong>. Data collected in logs is not used for marketing or profiling purposes.</p>
+      <h3 class="text-base font-medium text-slate-200 mb-2">2.5 Technical and Operational Logs</h3>
+      <p class="text-slate-400 leading-relaxed">We maintain technical logs for security monitoring, error diagnosis, and license validation. These logs may include IP addresses, timestamps, and license key identifiers. Our backend runs on <strong class="text-slate-300">Cloudflare's</strong> edge network (Cloudflare Workers and Cloudflare KV), which processes requests from data centers close to where the request originates, worldwide. Data collected in logs is not used for marketing or profiling purposes.</p>
     </section>
 
     <!-- 3 -->
@@ -75,7 +78,7 @@
           <tbody class="divide-y divide-slate-800">
             <tr>
               <td class="py-3 pr-6 text-slate-300">Zoho</td>
-              <td class="py-3 pr-6 text-slate-400">CRM data source and widget storage</td>
+              <td class="py-3 pr-6 text-slate-400">CRM data source</td>
               <td class="py-3"><a href="https://www.zoho.com/privacy.html" class="text-blue-400 hover:underline" target="_blank" rel="noopener">zoho.com/privacy</a></td>
             </tr>
             <tr>
@@ -84,9 +87,9 @@
               <td class="py-3"><a href="https://www.lemonsqueezy.com/privacy" class="text-blue-400 hover:underline" target="_blank" rel="noopener">lemonsqueezy.com/privacy</a></td>
             </tr>
             <tr>
-              <td class="py-3 pr-6 text-slate-300">AWS</td>
-              <td class="py-3 pr-6 text-slate-400">Backend infrastructure</td>
-              <td class="py-3"><a href="https://aws.amazon.com/privacy/" class="text-blue-400 hover:underline" target="_blank" rel="noopener">aws.amazon.com/privacy</a></td>
+              <td class="py-3 pr-6 text-slate-300">Cloudflare</td>
+              <td class="py-3 pr-6 text-slate-400">Backend infrastructure (Cloudflare Workers and KV) — license validation, seat assignments, widget settings and presets</td>
+              <td class="py-3"><a href="https://www.cloudflare.com/privacypolicy/" class="text-blue-400 hover:underline" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></td>
             </tr>
           </tbody>
         </table>
@@ -96,7 +99,7 @@
     <!-- 5 -->
     <section class="mb-10">
       <h2 class="text-lg font-semibold text-white mb-3">5. International Data Transfers</h2>
-      <p class="text-slate-400 leading-relaxed">Technical operational data may be processed on servers located in the United States. By using SETKI, you acknowledge that your data may be transferred to and processed in countries outside your own.</p>
+      <p class="text-slate-400 leading-relaxed">Technical operational data (license validation) is processed on Cloudflare's globally distributed edge network. By using SETKI, you acknowledge that your data may be transferred to and processed in countries outside your own.</p>
     </section>
 
     <!-- 6 -->
@@ -104,7 +107,8 @@
       <h2 class="text-lg font-semibold text-white mb-4">6. Data Retention</h2>
       <ul class="space-y-2">
         <li class="flex gap-2 text-slate-400"><span class="text-slate-500 shrink-0">—</span><span><strong class="text-slate-300">CRM data</strong> — not retained beyond the active session.</span></li>
-        <li class="flex gap-2 text-slate-400"><span class="text-slate-500 shrink-0">—</span><span><strong class="text-slate-300">Seat assignments</strong> — managed within Zoho's infrastructure; can be removed by your administrator at any time.</span></li>
+        <li class="flex gap-2 text-slate-400"><span class="text-slate-500 shrink-0">—</span><span><strong class="text-slate-300">Seat assignments</strong> — stored on our Cloudflare backend; can be changed or removed by your administrator at any time.</span></li>
+        <li class="flex gap-2 text-slate-400"><span class="text-slate-500 shrink-0">—</span><span><strong class="text-slate-300">Widget settings and presets</strong> — stored on our Cloudflare backend; retained until changed by you or removed on request.</span></li>
         <li class="flex gap-2 text-slate-400"><span class="text-slate-500 shrink-0">—</span><span><strong class="text-slate-300">Billing data</strong> — retained by LemonSqueezy per their policy.</span></li>
         <li class="flex gap-2 text-slate-400"><span class="text-slate-500 shrink-0">—</span><span><strong class="text-slate-300">Technical logs</strong> — retained for a limited period for operational and security purposes.</span></li>
       </ul>
