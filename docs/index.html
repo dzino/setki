@@ -66,6 +66,21 @@
 }</code></pre>
     </section>
 
+    <!-- Beyond the JSON -->
+    <section class="mb-12">
+      <h2 class="text-xl font-bold text-white mb-4">Beyond the JSON — managed in the Settings UI</h2>
+      <p class="text-slate-400 text-sm mb-4">A few features aren't part of the config JSON above — they're separate data, managed directly through the <strong class="text-slate-300">Settings (⚙)</strong> panel by an Administrator.</p>
+      <table>
+        <thead><tr><th>Feature</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Tabs</td><td>Sidebar of independently configured tables (different modules, filters, or columns) within one widget placement.</td></tr>
+          <tr><td>Presets</td><td>Named, reusable snapshots of a config JSON — save the current settings as a preset, apply any preset later.</td></tr>
+          <tr><td>Roles</td><td>Maps a Zoho CRM Profile to a preset (Settings → Roles tab), so different profiles see a different view automatically.</td></tr>
+          <tr><td>License / Seats</td><td>Assigns which users in the org get paid access once the team grows past the free tier (Settings → License tab).</td></tr>
+        </tbody>
+      </table>
+    </section>
+
     <!-- Field reference -->
     <section class="mb-16">
       <h2 class="text-xl font-bold text-white mb-8">Field reference</h2>
@@ -471,6 +486,28 @@
   "roleMap": {},
   "knownProfiles": []
 }</code></pre>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="mb-16">
+      <h2 class="text-xl font-bold text-white mb-8">Troubleshooting</h2>
+      <div class="space-y-10">
+
+        <div id="empty-table">
+          <h3 class="text-base font-semibold text-white mb-1">The table is empty or shows fewer records than expected</h3>
+          <p class="text-slate-400 text-sm mb-3">This is almost always a Zoho CRM data-sharing setting, not something SETKI controls. SETKI reads records through the official Zoho CRM API and can only display what the logged-in user is already permitted to see in Zoho — it has no separate permission layer of its own.</p>
+          <p class="text-slate-400 text-sm mb-3">Check <strong class="text-slate-300">Setup → Security Control → Roles and Sharing → Data Sharing Settings</strong> for the module you're viewing (e.g. Leads, Deals):</p>
+          <table class="mb-3">
+            <thead><tr><th>Setting</th><th>Effect</th></tr></thead>
+            <tbody>
+              <tr><td>Default Organization Permissions (OWD)</td><td>If set to <code>Private</code>, a user only sees their own records plus records of users below them in the Zoho Roles hierarchy — never records owned by users above or beside them.</td></tr>
+              <tr><td>Sharing Rules</td><td>Grant specific roles read (or read/write) access to records they wouldn't otherwise see, without changing OWD for everyone.</td></tr>
+            </tbody>
+          </table>
+          <p class="text-slate-400 text-sm">Fix: set the module's OWD to <code>Public</code>, or add a Sharing Rule covering the access direction you need. This is standard Zoho CRM behavior — the same rules apply with or without SETKI installed.</p>
         </div>
 
       </div>
