@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide — SETKI</title>
+  <link rel="icon" type="image/svg+xml" href="icon-setki.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-300 font-sans min-h-screen">
+
+  <!-- Nav -->
+  <header class="border-b border-slate-800 py-5 px-6">
+    <div class="max-w-3xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-white font-bold text-lg tracking-tight">SETKI</a>
+      <a href="/" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">← Back to setki.dev</a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 py-16">
+
+    <h1 class="text-3xl font-bold text-white mb-2">User Guide</h1>
+    <p class="text-slate-500 text-sm mb-12">How to use SETKI Grid inside Zoho CRM. Last updated: 2026-07-18</p>
+
+    <!-- 1 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">1. What is SETKI Grid</h2>
+      <p class="text-slate-400 leading-relaxed">SETKI Grid replaces the standard Zoho CRM list view with a fully editable, high-performance data table. It runs inside your Zoho CRM tab exactly where the module's list view normally appears — leads, deals, contacts, or any other module your administrator has configured. Everything below happens without leaving Zoho CRM.</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">2. Viewing your data</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">The grid loads your records as rows and fields as columns, just like the CRM list view — but faster and richer:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Handles large modules smoothly — 500+ rows and 20+ columns without slowdown</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Choose how many rows appear per page (10 / 25 / 50 / 100 / 200) if your administrator has made this adjustable</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Click the refresh control to reload the latest data without reloading the whole page</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Some columns may be "frozen" by your administrator — they stay visible on the left while you scroll horizontally through the rest</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">3. Editing records inline</h2>
+      <p class="text-slate-400 leading-relaxed mb-4"><strong class="text-slate-300">Double-click any cell</strong> to edit it directly — no need to open the record. Press Enter or click away to save; your change appears immediately, and rolls back automatically if the save fails.</p>
+
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="screenshot-1-inline-edit.png" alt="SETKI Grid — inline edit" class="w-full h-auto">
+      </div>
+
+      <p class="text-slate-400 leading-relaxed mb-2">Every field type edits the way you'd expect:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Text, numbers, currency, percent — type directly</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Picklists and multi-select — a dropdown with search opens</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Lookup fields — search across your CRM records to link one</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Dates — a date picker opens</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Checkboxes — click to toggle</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Email / phone / URL — edited as text, validated, and clickable when not editing</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">If a field is required, the grid won't let you save it empty. If your administrator has set the grid to read-only, cells won't open for editing at all.</p>
+    </section>
+
+    <!-- 4 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">4. Bulk editing multiple rows</h2>
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="screenshot-2-bulk-edit.png" alt="SETKI Grid — bulk edit" class="w-full h-auto">
+      </div>
+      <p class="text-slate-400 leading-relaxed">Select several rows using the row checkboxes, then change one field — the new value is applied to every selected row at once. Useful for updating a stage, owner, or status across dozens of records in seconds instead of opening each one.</p>
+    </section>
+
+    <!-- 5 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">5. Filtering and sorting</h2>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Use the filter row under the column headers to filter by any field. Available operators depend on the field type — contains, equals, greater/less than, starts with, ends with, and more</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Click a column header to sort by it; you can sort by more than one column at a time</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Your administrator may set default filters or sort order for the team — these apply automatically when you open the grid</li>
+      </ul>
+    </section>
+
+    <!-- 6 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">6. Seeing trends without leaving the grid</h2>
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="screenshot-3-sparklines-deadline.png" alt="SETKI Grid — sparklines and color thresholds" class="w-full h-auto">
+      </div>
+      <p class="text-slate-400 leading-relaxed mb-4">Where your administrator has configured them, columns can show:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Sparklines</strong> — a small line chart in the cell, built from related data. Hover to see exact values at each point; use the refresh control to pull the latest data into the chart</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Color thresholds</strong> — a cell's background changes color when its value crosses a defined limit, so outliers stand out at a glance</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Deadline highlighting</strong> — date fields turn yellow when due today and red when overdue</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Stock mode</strong> — numeric trend fields show an up or down arrow with color instead of a plain number</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Progress bars</strong> — percent fields render as a filled bar instead of a number</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Star ratings</strong> — numeric fields render as ★★★☆☆</li>
+      </ul>
+    </section>
+
+    <!-- 7 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">7. Column totals</h2>
+      <p class="text-slate-400 leading-relaxed">Numeric columns can show a totals row at the bottom of the grid — Sum or Average, whichever your administrator has set for that column.</p>
+    </section>
+
+    <!-- 8 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">8. Switching between tabs</h2>
+      <p class="text-slate-400 leading-relaxed">If your administrator has set up more than one table in this widget — for example, the same module viewed with different filters — a sidebar of tabs appears on the left. Click a tab to switch tables. Each tab keeps its own column layout, filters, and settings independently.</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">9. Your view is your own</h2>
+      <p class="text-slate-400 leading-relaxed">Column width, column order, page size, and row sort order that you set yourself are remembered per-device — they don't affect what your teammates see, and they persist the next time you open the grid on the same device.</p>
+    </section>
+
+    <!-- 10 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">10. Language</h2>
+      <p class="text-slate-400 leading-relaxed">SETKI Grid's interface automatically matches your browser language. Supported: English, Russian, Hindi, Spanish, Portuguese, German, French, Italian.</p>
+    </section>
+
+    <!-- 11 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">11. Free vs. Pro access</h2>
+      <p class="text-slate-400 leading-relaxed">Organizations with up to 3 assigned users get full functionality at no cost. From the 4th user, access is seat-based — your administrator purchases and assigns seats. If you see a message asking you to contact your administrator, it means your organization needs an additional seat or one hasn't been assigned to you yet. This doesn't affect what the grid can do — Free and Pro have identical functionality, the difference is purely how many people can use it.</p>
+    </section>
+
+    <!-- 12 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">12. Need help?</h2>
+      <p class="text-slate-400">Configuration questions (columns, filters, visualizations, presets, roles) are handled by your Zoho CRM administrator — SETKI Grid's settings panel is available to them from the grid.<br><br>For anything else, email us at <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a>.</p>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-600 text-sm">
+    <p>© 2026 SETKI. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
