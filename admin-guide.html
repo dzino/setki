@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Guide — SETKI</title>
+  <link rel="icon" type="image/svg+xml" href="icon-setki.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-950 text-slate-300 font-sans min-h-screen">
+
+  <!-- Nav -->
+  <header class="border-b border-slate-800 py-5 px-6">
+    <div class="max-w-3xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-white font-bold text-lg tracking-tight">SETKI</a>
+      <a href="/" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">← Back to setki.dev</a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <main class="max-w-3xl mx-auto px-6 py-16">
+
+    <h1 class="text-3xl font-bold text-white mb-2">Admin Guide</h1>
+    <p class="text-slate-500 text-sm mb-12">Configuring SETKI Grid for your organization. Last updated: 2026-07-18</p>
+
+    <!-- 1 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">1. Opening settings</h2>
+      <p class="text-slate-400 leading-relaxed">The settings panel (⚙) appears when you hover over the grid, but only for users whose Zoho CRM <strong class="text-slate-300">Profile is "Administrator"</strong> — this is hardcoded, not configurable. Everyone else never sees the icon. Settings are saved to your Zoho CRM organization and apply to <strong class="text-slate-300">every user</strong>, not just you. Changes preview live in the grid as you edit — nothing is applied for other users until you click Save.</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">2. Columns</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">Pick which fields of the module appear as columns. Hidden columns are removed entirely — not collapsed, not accessible to users. "Select all" / "clear all" toggles are available.</p>
+      <p class="text-slate-400 leading-relaxed">For each visible column you also set whether it's <strong class="text-slate-300">editable</strong> — users can change values in editable columns inline; other columns are view-only for everyone, regardless of their Zoho CRM edit permissions on that field.</p>
+    </section>
+
+    <!-- 3 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">3. Pinning columns</h2>
+      <p class="text-slate-400 leading-relaxed">Choose columns to pin to the left — they stay visible while users scroll horizontally through the rest. Useful for identifying columns (name, stage) on wide tables.</p>
+    </section>
+
+    <!-- 4 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">4. Filters and sorting</h2>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Set predefined filters on any column — including columns you've chosen not to display. These apply automatically when the grid loads</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>You can hide the filter row entirely — predefined filters still apply, users just can't change them</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Set a predefined sort order the same way, with the same option to hide sorting controls from users while keeping the order enforced</li>
+      </ul>
+    </section>
+
+    <!-- 5 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">5. General settings</h2>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Default rows per page</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Totals row — turn on/off, and per numeric column choose Sum, Average, or none</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Table height — fixed pixel height or fill the container</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Read-only mode — switches the entire grid to view-only for every non-admin user, regardless of the per-column editable setting</li>
+      </ul>
+    </section>
+
+    <!-- 6 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">6. Number & percent visualization</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">Available per numeric column, shown only for columns where the field type applies:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Star rating</strong> display for numeric fields</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Stock mode</strong> — replaces the number with an up/down arrow and color</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Color thresholds</strong> — set an upper and lower bound with custom colors; cells outside the range are highlighted (available for both number and percent columns)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Decimal places and a column suffix (numbers) — configurable per column</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Percent columns additionally render as a progress bar and support their own up/down indicator</li>
+      </ul>
+    </section>
+
+    <!-- 7 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">7. Dates and text</h2>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Deadline highlighting</strong> for date columns — on by default. Pick the color for "due today" and "overdue" with a color picker (defaults: amber for today, red for overdue)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Avatars</strong> for lookup/owner fields — on by default, shows a colored circle with initials next to the name</li>
+      </ul>
+    </section>
+
+    <!-- 8 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">8. Presets</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">A preset is a saved snapshot of the full configuration above. Presets are global — any administrator can save, apply, or delete any preset. Applying a preset copies its settings into the current draft (visible in the live preview); nothing is written to your organization until you save.</p>
+      <p class="text-slate-400 leading-relaxed">Typical use: build separate presets per team or per module — e.g. a warehouse view, a sales pipeline view, a read-only view for external contractors — and switch between them in one click instead of reconfiguring manually.</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">9. Roles — assigning presets per Zoho Profile</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">The Roles tab maps each Zoho CRM Profile (Administrator, Standard, or any custom profile in your org) to a preset. When a user opens the grid, SETKI checks their Profile and automatically applies the mapped preset — no per-user setup needed, since Zoho already assigns Profiles to users.</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Profiles are pulled automatically from your Zoho CRM organization</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A profile left as "— no assignment —" falls back to the base configuration (the settings above, not a preset)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A profile marked with a warning icon existed in a previous mapping but no longer exists in your CRM (renamed or deleted) — remove it with the ✕ next to it</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">This is access <em>within</em> the grid (which columns, filters, edit rights a role sees) — not licensing. It's independent from Free/Pro seat assignment below.</p>
+    </section>
+
+    <!-- 10 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">10. JSON editor</h2>
+      <p class="text-slate-400 leading-relaxed">Every setting above is also exposed as a single JSON document, editable directly with search and one-click copy. It's two-way: editing a toggle in the GUI updates the JSON immediately, and editing the JSON updates the GUI. Useful for copying a full configuration between widgets, or for AI-assisted config generation.</p>
+    </section>
+
+    <!-- 11 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">11. Multiple tables (Tabs)</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">If one widget placement should show more than one table — for example the same module with different filters for different teams — administrators can add tabs from the sidebar that appears next to the grid:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Click the <strong class="text-slate-300">+</strong> tile at the bottom of the sidebar to add a tab</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Hover a tab and use the flyout panel — ✎ to rename, 🗑 to delete (the first/default tab can't be deleted)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Each tab has fully independent settings — module, columns, filters, everything in this guide is configured separately per tab</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">Everyone can switch between existing tabs; only administrators can add, rename, or delete them.</p>
+    </section>
+
+    <!-- 12 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">12. Managing access — Free tier and Pro seats</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">The License tab shows a different view depending on whether your organization has a Pro subscription:</p>
+
+      <h3 class="text-base font-medium text-slate-200 mb-2">Free tier (no license key entered)</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">The first 3 users of your organization by account creation date get full access automatically — no configuration needed. This tab just shows you who those 3 are (read-only) and a counter. To extend access beyond 3 users, purchase a Pro subscription and enter the license key here.</p>
+
+      <h3 class="text-base font-medium text-slate-200 mb-2">Pro tier (license key entered)</h3>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A checklist of every user in your org — check the ones who should have Pro access, up to the number of seats you purchased</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Saving the key and saving seat assignments are separate actions (separate buttons)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>"Refresh limit" re-checks how many seats you've purchased — use this right after buying additional seats</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>"Remove key" (with confirmation) reverts the organization to the Free tier rules</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">Seats are purchased separately at <a href="https://setki.dev" class="text-blue-400 hover:underline">setki.dev</a> — billing is handled by LemonSqueezy, not inside Zoho CRM. See the <a href="/terms" class="text-blue-400 hover:underline">Terms of Service</a> for details.</p>
+    </section>
+
+    <!-- 13 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">13. Need help?</h2>
+      <p class="text-slate-400">For end-user instructions (not configuration), see the <a href="/user-guide" class="text-blue-400 hover:underline">User Guide</a>. For anything not covered here, email us at <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a>.</p>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-600 text-sm">
+    <p>© 2026 SETKI. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
