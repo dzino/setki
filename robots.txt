@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /app/
+Disallow: /hubspot-widget/
+
+Sitemap: https://setki.dev/sitemap.xml
