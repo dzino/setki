@@ -49,12 +49,12 @@
         <button id="plan-monthly" onclick="setPlan('monthly')"
           class="plan-btn rounded-xl border-2 border-blue-500 bg-blue-500/10 px-4 py-3 text-left transition-all">
           <p class="text-white font-semibold text-sm">Monthly</p>
-          <p class="text-blue-300 text-xs mt-0.5">$15 / user / month</p>
+          <p class="text-blue-300 text-xs mt-0.5">$20 / user / month</p>
         </button>
         <button id="plan-annual" onclick="setPlan('annual')"
           class="plan-btn rounded-xl border-2 border-slate-700 px-4 py-3 text-left transition-all hover:border-slate-500">
           <p class="text-white font-semibold text-sm">Annual <span class="text-emerald-400 text-xs font-normal">save 20%</span></p>
-          <p class="text-slate-400 text-xs mt-0.5">$12 / user / month</p>
+          <p class="text-slate-400 text-xs mt-0.5">$16 / user / month</p>
         </button>
       </div>
 
@@ -77,9 +77,9 @@
       <div class="bg-slate-900 rounded-xl p-4 mb-8">
         <div class="flex justify-between items-center">
           <span class="text-slate-500 text-sm">Total</span>
-          <span id="price-total" class="text-white font-bold text-lg">$60 / month</span>
+          <span id="price-total" class="text-white font-bold text-lg">$80 / month</span>
         </div>
-        <p id="price-per-user" class="text-slate-600 text-xs text-right mt-1">$15 × 4 users</p>
+        <p id="price-per-user" class="text-slate-600 text-xs text-right mt-1">$20 × 4 users</p>
       </div>
 
       <!-- CTA -->
@@ -115,10 +115,10 @@
 
   <script>
     const URLS = {
-      monthly: 'https://setki.lemonsqueezy.com/checkout/buy/9a8ec659-27d0-4674-bf4f-f8e9cb8540f4',
-      annual:  'https://setki.lemonsqueezy.com/checkout/buy/42416708-1698-48f6-9b23-4e392a286006'
+      monthly: 'https://setki.lemonsqueezy.com/checkout/buy/d5c04cbb-b1a5-4420-90e9-659993399583?enabled=2154462',
+      annual:  'https://setki.lemonsqueezy.com/checkout/buy/4263a0e9-b237-4df4-b5d1-eaf63ca3a8be?enabled=2154463'
     };
-    const PRICES = { monthly: 15, annual: 144 };
+    const PRICES = { monthly: 20, annual: 192 };
     const LABELS = { monthly: 'month', annual: 'year' };
     const MIN_SEATS = 4;
     let currentPlan = 'monthly';
@@ -146,7 +146,7 @@
       document.getElementById('seats-input').value = seats;
       document.getElementById('price-total').textContent = `$${seats * price} / ${label}`;
       document.getElementById('price-per-user').textContent = `$${price} × ${seats} users`;
-      document.getElementById('checkout-btn').href = `${URLS[currentPlan]}?quantity=${seats}`;
+      document.getElementById('checkout-btn').href = `${URLS[currentPlan]}&quantity=${seats}`;
       document.getElementById('btn-minus').disabled = seats <= MIN_SEATS;
       document.getElementById('btn-minus').classList.toggle('opacity-30', seats <= MIN_SEATS);
     }
