@@ -26,18 +26,6 @@ SETKI Grid replaces the standard Zoho CRM list view with a fully editable, high-
 
 ---
 
-## Pricing
-
-| | Free | Pro |
-| :--- | :---: | :---: |
-| Full functionality | ✅ | ✅ |
-| Team size | up to 3 users | 4+ users |
-| Price | $0 forever | from $12 / user / month |
-
-👉 **[Get Pro at setki.dev/buy](https://setki.dev/buy)**
-
----
-
 ## Privacy Policy
 
 [setki.dev/privacy](https://setki.dev/privacy)
