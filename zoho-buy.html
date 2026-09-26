@@ -118,8 +118,8 @@
 
   <script>
     const URLS = {
-      monthly: 'https://setki.lemonsqueezy.com/checkout/buy/9197d4ad-fd13-46e0-9739-34308ff4c163',
-      annual:  'https://setki.lemonsqueezy.com/checkout/buy/6be4a7f5-9a3e-417a-bdf7-d0181c58b11b'
+      monthly: 'https://setki.lemonsqueezy.com/checkout/buy/9197d4ad-fd13-46e0-9739-34308ff4c163?enabled=1764338',
+      annual:  'https://setki.lemonsqueezy.com/checkout/buy/6be4a7f5-9a3e-417a-bdf7-d0181c58b11b?enabled=1764798'
     };
     const PRICES = { monthly: 15, annual: 144 };
     const LABELS = { monthly: 'month', annual: 'year' };
@@ -149,7 +149,7 @@
       document.getElementById('seats-input').value = seats;
       document.getElementById('price-total').textContent = `$${seats * price} / ${label}`;
       document.getElementById('price-per-user').textContent = `$${price} × ${seats} users`;
-      document.getElementById('checkout-btn').href = `${URLS[currentPlan]}?quantity=${seats}`;
+      document.getElementById('checkout-btn').href = `${URLS[currentPlan]}&quantity=${seats}`;
       document.getElementById('btn-minus').disabled = seats <= MIN_SEATS;
       document.getElementById('btn-minus').classList.toggle('opacity-30', seats <= MIN_SEATS);
     }
