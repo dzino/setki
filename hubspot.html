@@ -78,14 +78,17 @@
 
   <!-- 2. PAIN -->
   <section id="pain" class="bg-slate-900 py-24">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-white mb-6">HubSpot is powerful.<br>Updating it shouldn't take hours.</h2>
-      <p class="text-slate-400 text-lg leading-relaxed mb-6">
-        Every field update means opening a record, making the change, saving, closing, and moving on to the next one. For a rep updating 30 records a day at 2 minutes each, that's an hour of repetitive work — per person.
-      </p>
-      <p class="text-slate-300 text-lg font-medium">
-        SETKI lets your team edit directly in the list view.<br>What used to take an hour now takes minutes.
-      </p>
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-[2fr_3fr] gap-12 items-center">
+      <img src="table_hatched.svg" alt="" class="w-full h-auto opacity-80">
+      <div>
+        <h2 class="text-3xl font-bold text-white mb-6">HubSpot is powerful.<br>Updating it shouldn't take hours.</h2>
+        <p class="text-slate-400 text-lg leading-relaxed mb-6">
+          Every field update means opening a record, making the change, saving, closing, and moving on to the next one. For a rep updating 30 records a day at 2 minutes each, that's an hour of repetitive work — per person.
+        </p>
+        <p class="text-slate-300 text-lg font-medium">
+          SETKI lets your team edit directly in the list view.<br>What used to take an hour now takes minutes.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -93,23 +96,31 @@
   <section class="max-w-6xl mx-auto px-6 py-24">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
-        <p class="role-badge text-blue-400 mb-3">For Sales Teams</p>
+        <p class="role-badge text-cyan-400 mb-3">For Sales Teams</p>
         <h2 class="text-3xl font-bold text-white mb-6">Update 50 records<br>in 5 minutes</h2>
         <p class="text-slate-400 mb-6 leading-relaxed">
-          Double-click any cell to edit it inline — no record card, no page reload. Dropdowns, association fields, dates, checkboxes, multi-select — all editable directly in the list.
+          Click any cell to edit it inline — no record card, no page reload. Dropdowns, association fields, dates, checkboxes, multi-select — all editable directly in the list.
         </p>
         <p class="text-slate-400 mb-8 leading-relaxed">
           Need to update the same field across multiple rows? Select them, change the value once, and it applies to all.
         </p>
         <ul class="space-y-3">
-          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Inline edit for all field types — including dropdowns, associations, and multi-select</li>
-          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Bulk edit: select rows → change one field for all at once</li>
-<li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Sort by any column. Filter by any field.</li>
-          <li class="flex items-start gap-3 text-slate-300"><span class="text-blue-400 font-bold shrink-0">✓</span> Admin can preset default filters and sort order for the whole team</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-cyan-400 font-bold shrink-0">✓</span> Inline edit for all field types — including dropdowns, associations, and multi-select</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-cyan-400 font-bold shrink-0">✓</span> Bulk edit: select rows → change one field for all at once</li>
+<li class="flex items-start gap-3 text-slate-300"><span class="text-cyan-400 font-bold shrink-0">✓</span> Sort by any column. Filter by any field.</li>
+          <li class="flex items-start gap-3 text-slate-300"><span class="text-cyan-400 font-bold shrink-0">✓</span> Admin can preset default filters and sort order for the whole team</li>
         </ul>
       </div>
-      <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-800">
-        <img src="screenshot-1-inline-edit.png" alt="SETKI Grid — inline edit" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
+      <div>
+        <img src="checks_sketch.svg" alt="" class="w-full max-w-[300px] mx-auto h-auto opacity-80 mb-6">
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+          <img src="screenshot-1-inline-edit.png" alt="SETKI Grid — inline edit" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-16 h-16 rounded-full bg-slate-900/60 backdrop-blur-sm flex items-center justify-center">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="7" stroke="#a5b4fc" stroke-width="2"/><line x1="15" y1="15" x2="21" y2="21" stroke="#a5b4fc" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -118,8 +129,16 @@
   <section class="bg-slate-900 py-24">
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1 rounded-2xl overflow-hidden shadow-xl border border-slate-800">
-          <img src="screenshot-4-settings.png" alt="SETKI Grid — admin settings" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
+        <div class="order-2 md:order-1">
+          <img src="gear_sketch.svg" alt="" class="w-full max-w-[380px] mx-auto h-auto opacity-80 mb-6">
+          <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+            <img src="screenshot-4-settings.png" alt="SETKI Grid — admin settings" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div class="w-16 h-16 rounded-full bg-slate-900/60 backdrop-blur-sm flex items-center justify-center">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="7" stroke="#a5b4fc" stroke-width="2"/><line x1="15" y1="15" x2="21" y2="21" stroke="#a5b4fc" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="order-1 md:order-2">
           <p class="role-badge text-purple-400 mb-3">For CRM Admins</p>
@@ -160,8 +179,16 @@
           <li class="flex items-start gap-3 text-slate-300"><span class="text-emerald-400 font-bold shrink-0">✓</span> Column totals — Sum or Average at the bottom of any numeric column</li>
         </ul>
       </div>
-      <div class="rounded-2xl overflow-hidden shadow-xl border border-slate-800">
-        <img src="screenshot-3-sparklines-deadline.png" alt="SETKI Grid — sparklines and color thresholds" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
+      <div>
+        <img src="chart_sketch.svg" alt="" class="w-full max-w-[300px] mx-auto h-auto opacity-80 mb-6">
+        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-800">
+          <img src="screenshot-3-sparklines-deadline.png" alt="SETKI Grid — sparklines and color thresholds" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-16 h-16 rounded-full bg-slate-900/60 backdrop-blur-sm flex items-center justify-center">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><circle cx="10" cy="10" r="7" stroke="#a5b4fc" stroke-width="2"/><line x1="15" y1="15" x2="21" y2="21" stroke="#a5b4fc" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -228,17 +255,22 @@
   </section>
 
   <!-- 7. AI-READY BLOCK -->
-  <section class="max-w-3xl mx-auto px-6 py-24 text-center">
-    <h2 class="text-3xl font-bold text-white mb-6">Configure with AI —<br>describe what you need, get the config</h2>
-    <p class="text-slate-400 text-lg mb-6 leading-relaxed">
-      SETKI is configured through a JSON schema that's fully documented and publicly available. This means any AI assistant — Claude, ChatGPT, or others — can generate a complete configuration for you.
-    </p>
-    <p class="text-slate-400 mb-8">Just describe what you need in plain language:</p>
-    <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 mb-8 text-left">
-      <p class="text-slate-300 italic leading-relaxed">"Set up SETKI for our Deals pipeline: pin the Amount column, add sparklines from related Line Items, highlight red if Amount is under $1,000."</p>
+  <section class="max-w-5xl mx-auto px-6 py-24">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+      <img src="box_sketch.svg" alt="" class="w-full md:w-[260px] shrink-0 h-auto opacity-80">
+      <div class="text-center md:text-left">
+        <h2 class="text-3xl font-bold text-white mb-6">Configure with AI —<br>describe what you need, get the config</h2>
+        <p class="text-slate-400 text-lg mb-6 leading-relaxed">
+          SETKI is configured through a JSON schema that's fully documented and publicly available. This means any AI assistant — Claude, ChatGPT, or others — can generate a complete configuration for you.
+        </p>
+        <p class="text-slate-400 mb-8">Just describe what you need in plain language:</p>
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-6 mb-8 text-left">
+          <p class="text-slate-300 italic leading-relaxed">"Set up SETKI for our Deals pipeline: pin the Amount column, add sparklines from related Line Items, highlight red if Amount is under $1,000."</p>
+        </div>
+        <p class="text-slate-400 mb-8 leading-relaxed">Paste the output into SETKI's config editor — done in seconds.<br>No technical knowledge required.</p>
+        <a href="/docs/" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Read the documentation →</a>
+      </div>
     </div>
-    <p class="text-slate-400 mb-8 leading-relaxed">Paste the output into SETKI's config editor — done in seconds.<br>No technical knowledge required.</p>
-    <a href="/docs/" class="text-blue-400 hover:text-blue-300 font-medium transition-colors">Read the documentation →</a>
   </section>
 
   <!-- 8. PRICING BLOCK -->
@@ -335,15 +367,18 @@
 
   <!-- 11. FOOTER CTA -->
   <section class="bg-slate-900 py-24">
-  <div class="max-w-3xl mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold text-white mb-6">Ready to get your time back?</h2>
-    <p class="text-slate-400 text-lg mb-10 leading-relaxed">
-      Connect SETKI free for your team of up to 3.<br>No credit card. No setup calls. Just connect and start editing.
-    </p>
-    <a href="https://setki.dev/hubspot-widget/" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-10 py-4 rounded-xl transition-colors text-lg mb-6 cursor-pointer">
-      Connect HubSpot free
-    </a>
-    <p class="text-slate-500 text-sm">Questions about Pro? <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a></p>
+  <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+    <img src="rocket_sketch.svg" alt="" class="w-full md:w-[260px] shrink-0 h-auto opacity-80">
+    <div class="text-center md:text-left">
+      <h2 class="text-4xl font-bold text-white mb-6">Ready to get your time back?</h2>
+      <p class="text-slate-400 text-lg mb-10 leading-relaxed">
+        Connect SETKI free for your team of up to 3.<br>No credit card. No setup calls. Just connect and start editing.
+      </p>
+      <a href="https://setki.dev/hubspot-widget/" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-10 py-4 rounded-xl transition-colors text-lg mb-6 cursor-pointer">
+        Connect HubSpot free
+      </a>
+      <p class="text-slate-500 text-sm">Questions about Pro? <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a></p>
+    </div>
   </div>
   </section>
 
