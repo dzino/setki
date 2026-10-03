@@ -29,43 +29,83 @@
 
 <body class="bg-slate-950 text-slate-200 font-sans leading-relaxed">
 
-  <!-- 1. HERO + BANNER -->
-  <section id="demo" class="max-w-6xl mx-auto px-6 min-h-screen flex flex-col justify-center gap-10 py-10">
+  <!-- 1. HERO + VIDEO -->
+  <section id="demo" class="max-w-6xl mx-auto px-6 min-h-screen flex flex-col justify-center gap-8 py-10">
 
-    <!-- Row 1: big text | small text + buttons -->
-    <div class="grid md:grid-cols-[7fr_13fr] gap-10 items-center">
-      <h1 class="text-[60px] font-extrabold text-white leading-tight">
-        <a href="/" class="hover:opacity-80 transition-opacity" style="display: inline-block; line-height: 1;">
-          Your HubSpot CRM list<br>
-          <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent text-[40px]">now fully editable</span>
-        </a>
-      </h1>
+    <!-- Row 1: text (headline + CTA) | demo video -->
+    <div class="grid md:grid-cols-[6fr_5fr] gap-12 items-center">
       <div>
+        <a href="/" class="hover:opacity-80 transition-opacity inline-block mb-[32px]">
+          <svg viewBox="0 0 480 100" width="312" height="65" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <clipPath id="hubspot-hero-logo-clip"><rect x="0" y="0" width="480" height="100" /></clipPath>
+            </defs>
+            <rect x="2" y="2" width="116" height="96" rx="10" fill="#FFFFFF" stroke="#1E2A4A" stroke-width="4" />
+            <path d="M2 12a10 10 0 0 1 10-10H108a10 10 0 0 1 10 10V26H2Z" fill="#1E2A4A" />
+            <g stroke="#C5D3E3" stroke-width="3">
+              <line x1="40.7" y1="26" x2="40.7" y2="96" />
+              <line x1="79.3" y1="26" x2="79.3" y2="96" />
+              <line x1="4" y1="50" x2="116" y2="50" />
+              <line x1="4" y1="74" x2="116" y2="74" />
+            </g>
+            <rect x="2" y="2" width="116" height="96" rx="10" fill="none" stroke="#1E2A4A" stroke-width="4" />
+            <polyline points="12,86 40,62 58,72 88,38 116,8" fill="none" stroke="#3B82F6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+            <g fill="none" stroke="#3B82F6" stroke-width="20" stroke-linejoin="miter" clip-path="url(#hubspot-hero-logo-clip)">
+              <path transform="translate(144 0)" d="M60 20C52 12 44 10 34 10C20 10 10 18 10 30C10 42 18 50 34 50C50 50 58 58 58 70C58 82 50 90 34 90C22 90 12 86 6 78" />
+              <path transform="translate(226 0)" d="M60 10H10V90H60M10 50H54" />
+              <path transform="translate(300 0)" d="M0 10H64M32 10V100" />
+            </g>
+            <g fill="#3B82F6">
+              <g transform="translate(378 0)">
+                <rect x="0" y="0" width="20" height="100" />
+                <polygon points="20,40 44,0 68,0 38,50 68,100 44,100 20,60" />
+              </g>
+              <rect x="460" y="0" width="20" height="100" />
+            </g>
+          </svg>
+        </a>
+        <h1 class="text-[34px] font-extrabold text-white leading-tight mb-6">
+          Your HubSpot CRM list<br>
+          <span class="text-[30px]" style="color: #3B82F6">now fully editable</span>
+        </h1>
         <p class="text-lg text-slate-400 leading-relaxed mb-6">
           Edit any record inline. Bulk-update dozens of rows at once. See trends right in the list — no extra pages, no exports, no switching tools.
         </p>
-        <div class="flex flex-wrap gap-3 mb-3">
-          <a href="https://setki.dev/hubspot-widget/" class="bg-blue-500 hover:bg-blue-400 text-white font-semibold px-6 py-3 rounded-xl transition-colors text-base cursor-pointer whitespace-nowrap">
-            Connect HubSpot free
+        <div class="flex gap-3 mb-3">
+          <a href="https://setki.dev/hubspot-widget/" class="flex-1 flex items-center justify-center gap-5 bg-blue-500 hover:bg-blue-400 text-white font-semibold pl-6 pr-10 py-3 rounded-xl transition-colors text-base cursor-pointer">
+            <svg width="28" height="28" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0" aria-hidden="true">
+              <path d="M8 1.5v8M8 9.5L5 6.5M8 9.5l3-3M2.5 11.5V13a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Connect HubSpot free</span>
           </a>
-          <a href="https://setki.dev/demo/" class="text-blue-400 hover:text-white font-medium px-6 py-3 rounded-xl border border-blue-500/50 hover:border-blue-500 transition-colors text-base whitespace-nowrap">
-            Try live demo →
-          </a>
-          <a href="#pricing" class="text-slate-400 hover:text-white font-medium px-6 py-3 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors text-base whitespace-nowrap">
-            See pricing ↓
-          </a>
+          <div class="flex-1 flex flex-col gap-3">
+            <a href="https://setki.dev/demo/" class="flex-1 flex items-center justify-center text-blue-400 hover:text-white font-medium px-6 py-3 rounded-xl border border-blue-500/50 hover:border-blue-500 transition-colors text-base whitespace-nowrap">
+              Try live demo →
+            </a>
+            <a href="#pricing" class="flex-1 flex items-center justify-center text-slate-400 hover:text-white font-medium px-6 py-3 rounded-xl border border-slate-700 hover:border-slate-500 transition-colors text-base whitespace-nowrap">
+              See pricing ↓
+            </a>
+          </div>
         </div>
         <p class="text-slate-500 text-sm">Free for teams up to 3 users. No time limit.</p>
       </div>
+
+      <!-- demo video (replaces static banner) -->
+      <div class="w-full max-w-[440px] mx-auto self-end mb-[30px] rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+        <video class="w-full h-full block" poster="hubspot-demo-poster.jpg" controls autoplay muted loop playsinline preload="auto">
+          <source src="hubspot-demo.mp4?v=2" type="video/mp4">
+        </video>
+      </div>
     </div>
 
-    <!-- Row 2: banner -->
+    <!-- Row 2: banner — закомментировано 2026-10-04 (заменено видео в Row 1), можно вернуть
     <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
       <img src="banner-setki-hubspot.svg" alt="SETKI Grid for HubSpot" class="w-full h-auto">
     </div>
+    -->
 
     <!-- Scroll hint -->
-    <div class="flex justify-center pb-2">
+    <div class="flex justify-center pb-2 pt-16">
       <div class="flex flex-col items-center gap-1 text-slate-600 hover:text-slate-400 transition-colors cursor-pointer" onclick="document.querySelector('#pain').scrollIntoView({behavior:'smooth'})">
         <span class="text-xs tracking-widest uppercase">Scroll</span>
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="animate-bounce">
@@ -374,7 +414,10 @@
       <p class="text-slate-400 text-lg mb-10 leading-relaxed">
         Connect SETKI free for your team of up to 3.<br>No credit card. No setup calls. Just connect and start editing.
       </p>
-      <a href="https://setki.dev/hubspot-widget/" class="inline-block bg-blue-500 hover:bg-blue-400 text-white font-semibold px-10 py-4 rounded-xl transition-colors text-lg mb-6 cursor-pointer">
+      <a href="https://setki.dev/hubspot-widget/" class="inline-flex items-center gap-4 bg-blue-500 hover:bg-blue-400 text-white font-semibold px-10 py-4 rounded-xl transition-colors text-lg mb-6 cursor-pointer">
+        <svg width="22" height="22" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="shrink-0" aria-hidden="true">
+          <path d="M8 1.5v8M8 9.5L5 6.5M8 9.5l3-3M2.5 11.5V13a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         Connect HubSpot free
       </a>
       <p class="text-slate-500 text-sm">Questions about Pro? <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a></p>
