@@ -24,6 +24,8 @@
     #lightbox.open { display: flex; }
     #lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 25px 60px rgba(0,0,0,0.7); animation: lb-in .18s ease; }
     @keyframes lb-in { from { opacity: 0; transform: scale(0.93); } to { opacity: 1; transform: scale(1); } }
+    @keyframes scroll-bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6%); } }
+    .animate-scroll-bounce { animation: scroll-bounce 1.5s ease-in-out infinite; }
   </style>
 </head>
 
@@ -106,11 +108,8 @@
 
     <!-- Scroll hint -->
     <div class="flex justify-center pb-2 pt-16">
-      <div class="flex flex-col items-center gap-1 text-slate-600 hover:text-slate-400 transition-colors cursor-pointer" onclick="document.querySelector('#pain').scrollIntoView({behavior:'smooth'})">
-        <span class="text-xs tracking-widest uppercase">Scroll</span>
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" class="animate-bounce">
-          <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+      <div class="flex flex-col items-center cursor-pointer animate-scroll-bounce" onclick="document.querySelector('#pain').scrollIntoView({behavior:'smooth'})">
+        <img src="scroll_sketch.svg" alt="Scroll" class="w-[150px] h-auto opacity-70 hover:opacity-100 transition-opacity">
       </div>
     </div>
 
