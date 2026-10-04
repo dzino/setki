@@ -32,10 +32,11 @@
 <body class="bg-slate-950 text-slate-200 font-sans leading-relaxed">
 
   <!-- 1. HERO + VIDEO -->
-  <section id="demo" class="max-w-6xl mx-auto px-6 min-h-screen flex flex-col justify-center gap-8 py-10">
+  <section id="demo" class="relative max-w-6xl mx-auto px-6 min-h-screen flex flex-col py-10">
 
     <!-- Row 1: text (headline + CTA) | demo video -->
-    <div class="grid md:grid-cols-[6fr_5fr] gap-12 items-center">
+    <div class="flex-1 flex items-center">
+    <div class="grid md:grid-cols-[6fr_5fr] gap-12 items-center w-full">
       <div>
         <a href="/" class="hover:opacity-80 transition-opacity inline-block mb-[33px]">
           <svg viewBox="0 0 480 100" width="312" height="65" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -99,6 +100,7 @@
         </video>
       </div>
     </div>
+    </div>
 
     <!-- Row 2: banner — закомментировано 2026-10-04 (заменено видео в Row 1), можно вернуть
     <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
@@ -107,7 +109,7 @@
     -->
 
     <!-- Scroll hint -->
-    <div class="flex justify-center pb-2 pt-16">
+    <div class="absolute bottom-2 inset-x-0 flex justify-center">
       <div class="flex flex-col items-center cursor-pointer animate-scroll-bounce" onclick="document.querySelector('#pain').scrollIntoView({behavior:'smooth'})">
         <img src="scroll_sketch.svg" alt="Scroll" class="w-[150px] h-auto opacity-70 hover:opacity-100 transition-opacity">
       </div>
