@@ -15,7 +15,25 @@
   <meta name="twitter:title" content="SETKI Grid for Zoho CRM — Inline Edit, Bulk Update, Sparklines">
   <meta name="twitter:description" content="Edit any Zoho CRM record inline, bulk-update dozens of rows at once, and see trends right in the list — no extra pages, no exports.">
   <meta name="twitter:image" content="https://setki.dev/demo.jpeg">
+  <link rel="canonical" href="https://setki.dev/zoho">
   <link rel="icon" type="image/svg+xml" href="icon-setki.svg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SETKI Grid for Zoho CRM",
+    "description": "Edit any Zoho CRM record inline, bulk-update dozens of rows at once, and see trends right in the list — no extra pages, no exports.",
+    "url": "https://setki.dev/zoho",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "Free for teams up to 3 users"
+    }
+  }
+  </script>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .feature-card { background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(71, 85, 105, 0.3); }
@@ -95,10 +113,16 @@
 
       <!-- demo video (replaces static banner) -->
       <div class="w-full max-w-[440px] mx-auto self-end mb-[30px] rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
-        <video class="w-full h-full block" poster="zoho-demo-poster.jpg" controls autoplay muted loop playsinline preload="auto">
+        <video id="demo-video" class="w-full h-full block" poster="zoho-demo-poster.jpg" controls muted loop playsinline preload="none">
           <source src="zoho-demo.mp4?v=2" type="video/mp4">
         </video>
       </div>
+      <script>
+        window.addEventListener('load', () => {
+          const v = document.getElementById('demo-video');
+          if (v) v.play().catch(() => {});
+        });
+      </script>
     </div>
     </div>
 
