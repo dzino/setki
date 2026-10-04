@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /app/
 Disallow: /hubspot-widget/
+Disallow: /demo/
 
 Sitemap: https://setki.dev/sitemap.xml
