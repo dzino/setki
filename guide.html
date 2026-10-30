@@ -13,6 +13,11 @@
     .toc-link.active { color: #ffffff; font-weight: 600; border-left-color: #60a5fa; }
     .toc-group-label { color: #475569; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 1.25rem 0 0.5rem; }
     .toc-group-label:first-child { margin-top: 0; }
+    .sidebar-scroll { scrollbar-width: thin; scrollbar-color: #334155 transparent; }
+    .sidebar-scroll::-webkit-scrollbar { width: 6px; }
+    .sidebar-scroll::-webkit-scrollbar-track { background: transparent; }
+    .sidebar-scroll::-webkit-scrollbar-thumb { background-color: #334155; border-radius: 9999px; }
+    .sidebar-scroll::-webkit-scrollbar-thumb:hover { background-color: #475569; }
   </style>
 </head>
 
@@ -29,7 +34,7 @@
   <div class="max-w-6xl mx-auto px-6 flex gap-12 items-start">
 
     <!-- Left sidebar nav -->
-    <aside class="hidden lg:block w-56 shrink-0 sticky top-8 py-16 max-h-screen overflow-y-auto">
+    <aside class="sidebar-scroll hidden lg:block w-56 shrink-0 sticky top-8 py-16 max-h-[calc(100vh-4rem)] overflow-y-auto">
       <p class="toc-group-label">Part 1 — Using the grid</p>
       <a href="#u1" class="toc-link">1. What is SETKI Grid</a>
       <a href="#u2" class="toc-link">2. Viewing your data</a>
