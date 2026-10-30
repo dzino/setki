@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide — SETKI</title>
+  <link rel="icon" type="image/svg+xml" href="icon-setki.svg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .toc-link { display: block; padding: 0.25rem 0 0.25rem 0.75rem; margin-left: -0.75rem; border-left: 2px solid transparent; color: #64748b; font-size: 0.875rem; transition: color .15s, border-color .15s; }
+    .toc-link:hover { color: #93c5fd; }
+    .toc-link.active { color: #ffffff; font-weight: 600; border-left-color: #60a5fa; }
+    .toc-group-label { color: #475569; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; margin: 1.25rem 0 0.5rem; }
+    .toc-group-label:first-child { margin-top: 0; }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-300 font-sans min-h-screen">
+
+  <!-- Nav -->
+  <header class="border-b border-slate-800 py-5 px-6">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <a href="/" class="text-white font-bold text-lg tracking-tight">SETKI</a>
+      <a href="/" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">← Back to setki.dev</a>
+    </div>
+  </header>
+
+  <div class="max-w-6xl mx-auto px-6 flex gap-12 items-start">
+
+    <!-- Left sidebar nav -->
+    <aside class="hidden lg:block w-56 shrink-0 sticky top-8 py-16 max-h-screen overflow-y-auto">
+      <p class="toc-group-label">Part 1 — Using the grid</p>
+      <a href="#u1" class="toc-link">1. What is SETKI Grid</a>
+      <a href="#u2" class="toc-link">2. Viewing your data</a>
+      <a href="#u3" class="toc-link">3. Editing records inline</a>
+      <a href="#u4" class="toc-link">4. Bulk editing rows</a>
+      <a href="#u5" class="toc-link">5. Filtering and sorting</a>
+      <a href="#u6" class="toc-link">6. Seeing trends</a>
+      <a href="#u7" class="toc-link">7. Column totals</a>
+      <a href="#u8" class="toc-link">8. Switching tabs</a>
+      <a href="#u9" class="toc-link">9. Your view is your own</a>
+      <a href="#u10" class="toc-link">10. Language</a>
+      <a href="#u11" class="toc-link">11. Free vs. Pro access</a>
+
+      <p class="toc-group-label">Part 2 — Configuration</p>
+      <a href="#a1" class="toc-link">1. Opening settings</a>
+      <a href="#a2" class="toc-link">2. Columns</a>
+      <a href="#a3" class="toc-link">3. Pinning columns</a>
+      <a href="#a4" class="toc-link">4. Filters and sorting</a>
+      <a href="#a5" class="toc-link">5. General settings</a>
+      <a href="#a6" class="toc-link">6. Number & percent</a>
+      <a href="#a7" class="toc-link">7. Dates and text</a>
+      <a href="#a8" class="toc-link">8. Charts (sparklines)</a>
+      <a href="#a9" class="toc-link">9. Presets</a>
+      <a href="#a10" class="toc-link">10. Roles</a>
+      <a href="#a11" class="toc-link">11. JSON editor</a>
+      <a href="#a12" class="toc-link">12. Tabs</a>
+      <a href="#a13" class="toc-link">13. Free tier and Pro seats</a>
+    </aside>
+
+    <!-- Content -->
+    <main class="max-w-3xl mx-auto px-0 py-16 min-w-0">
+
+    <h1 class="text-3xl font-bold text-white mb-2">SETKI Guide</h1>
+    <p class="text-slate-500 text-sm mb-8">Everything you need to use and configure SETKI Grid, on one page. Last updated: 2026-10-30</p>
+
+    <div class="rounded-xl overflow-hidden border border-slate-800 mb-10 aspect-video">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/e73mKCyiYTA" title="SETKI Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <!-- Mobile table of contents (sidebar hidden below lg) -->
+    <details class="rounded-xl border border-slate-800 p-6 mb-16 lg:hidden">
+      <summary class="text-white font-semibold cursor-pointer">On this page</summary>
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6 mt-4">
+        <div>
+          <p class="text-slate-500 text-xs uppercase tracking-wide mb-2">Part 1 — Using the grid</p>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#u1" class="text-blue-400 hover:underline">1. What is SETKI Grid</a></li>
+            <li><a href="#u2" class="text-blue-400 hover:underline">2. Viewing your data</a></li>
+            <li><a href="#u3" class="text-blue-400 hover:underline">3. Editing records inline</a></li>
+            <li><a href="#u4" class="text-blue-400 hover:underline">4. Bulk editing multiple rows</a></li>
+            <li><a href="#u5" class="text-blue-400 hover:underline">5. Filtering and sorting</a></li>
+            <li><a href="#u6" class="text-blue-400 hover:underline">6. Seeing trends without leaving the grid</a></li>
+            <li><a href="#u7" class="text-blue-400 hover:underline">7. Column totals</a></li>
+            <li><a href="#u8" class="text-blue-400 hover:underline">8. Switching between tabs</a></li>
+            <li><a href="#u9" class="text-blue-400 hover:underline">9. Your view is your own</a></li>
+            <li><a href="#u10" class="text-blue-400 hover:underline">10. Language</a></li>
+            <li><a href="#u11" class="text-blue-400 hover:underline">11. Free vs. Pro access</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-slate-500 text-xs uppercase tracking-wide mb-2">Part 2 — Configuration (administrators)</p>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#a1" class="text-blue-400 hover:underline">1. Opening settings</a></li>
+            <li><a href="#a2" class="text-blue-400 hover:underline">2. Columns</a></li>
+            <li><a href="#a3" class="text-blue-400 hover:underline">3. Pinning columns</a></li>
+            <li><a href="#a4" class="text-blue-400 hover:underline">4. Filters and sorting</a></li>
+            <li><a href="#a5" class="text-blue-400 hover:underline">5. General settings</a></li>
+            <li><a href="#a6" class="text-blue-400 hover:underline">6. Number & percent visualization</a></li>
+            <li><a href="#a7" class="text-blue-400 hover:underline">7. Dates and text</a></li>
+            <li><a href="#a8" class="text-blue-400 hover:underline">8. Charts (sparklines)</a></li>
+            <li><a href="#a9" class="text-blue-400 hover:underline">9. Presets</a></li>
+            <li><a href="#a10" class="text-blue-400 hover:underline">10. Roles</a></li>
+            <li><a href="#a11" class="text-blue-400 hover:underline">11. JSON editor</a></li>
+            <li><a href="#a12" class="text-blue-400 hover:underline">12. Multiple tables (Tabs)</a></li>
+            <li><a href="#a13" class="text-blue-400 hover:underline">13. Free tier and Pro seats</a></li>
+          </ul>
+        </div>
+      </div>
+    </details>
+
+    <!-- ============ PART 1 — USER GUIDE ============ -->
+    <h2 class="text-2xl font-bold text-white mb-1">Part 1 — Using the grid</h2>
+    <p class="text-slate-500 text-sm mb-10">For everyone who opens SETKI Grid inside the CRM.</p>
+
+    <section id="u1" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">1. What is SETKI Grid</h3>
+      <p class="text-slate-400 leading-relaxed">SETKI Grid replaces the standard CRM list view with a fully editable, high-performance data table. It runs right where the module's list view normally appears — leads, deals, contacts, or any other module your administrator has configured. Everything below happens without leaving the CRM.</p>
+    </section>
+
+    <section id="u2" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">2. Viewing your data</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">The grid loads your records as rows and fields as columns, just like the CRM list view — but faster and richer:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Handles large modules smoothly — 500+ rows and 20+ columns without slowdown</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Choose how many rows appear per page (10 / 25 / 50 / 100 / 200) if your administrator has made this adjustable</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Click the refresh control to reload the latest data without reloading the whole page</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Some columns may be "frozen" by your administrator — they stay visible on the left while you scroll horizontally through the rest</li>
+      </ul>
+    </section>
+
+    <section id="u3" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">3. Editing records inline</h3>
+      <p class="text-slate-400 leading-relaxed mb-4"><strong class="text-slate-300">Double-click any cell</strong> to edit it directly — no need to open the record. Press Enter or click away to save; your change appears immediately, and rolls back automatically if the save fails.</p>
+
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="screenshot-1-inline-edit.png" alt="SETKI Grid — inline edit" class="w-full h-auto">
+      </div>
+
+      <p class="text-slate-400 leading-relaxed mb-2">Every field type edits the way you'd expect:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Text, numbers, currency, percent — type directly</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Picklists and multi-select — a dropdown with search opens</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Lookup fields — search across your CRM records to link one</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Dates — a date picker opens</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Checkboxes — click to toggle</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Email / phone / URL — edited as text, validated, and clickable when not editing</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">If a field is required, the grid won't let you save it empty. If your administrator has set the grid to read-only, cells won't open for editing at all.</p>
+    </section>
+
+    <section id="u4" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">4. Bulk editing multiple rows</h3>
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="screenshot-2-bulk-edit.png" alt="SETKI Grid — bulk edit" class="w-full h-auto">
+      </div>
+      <p class="text-slate-400 leading-relaxed">Select several rows using the row checkboxes, then change one field — the new value is applied to every selected row at once. Useful for updating a stage, owner, or status across dozens of records in seconds instead of opening each one.</p>
+    </section>
+
+    <section id="u5" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">5. Filtering and sorting</h3>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Use the filter row under the column headers to filter by any field. Available operators depend on the field type — contains, equals, greater/less than, starts with, ends with, and more</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Click a column header to sort by it; you can sort by more than one column at a time</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Your administrator may set default filters or sort order for the team — these apply automatically when you open the grid</li>
+      </ul>
+    </section>
+
+    <section id="u6" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">6. Seeing trends without leaving the grid</h3>
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="screenshot-3-sparklines-deadline.png" alt="SETKI Grid — sparklines and color thresholds" class="w-full h-auto">
+      </div>
+      <p class="text-slate-400 leading-relaxed mb-4">Where your administrator has configured them, columns can show:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Sparklines</strong> — a small line chart in the cell, built from related data. Hover to see exact values at each point; use the refresh control to pull the latest data into the chart</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Color thresholds</strong> — a cell's background changes color when its value crosses a defined limit, so outliers stand out at a glance</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Deadline highlighting</strong> — date fields turn yellow when due today and red when overdue</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Stock mode</strong> — numeric trend fields show an up or down arrow with color instead of a plain number</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Progress bars</strong> — percent fields render as a filled bar instead of a number</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Star ratings</strong> — numeric fields render as ★★★☆☆</li>
+      </ul>
+    </section>
+
+    <section id="u7" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">7. Column totals</h3>
+      <p class="text-slate-400 leading-relaxed">Numeric columns can show a totals row at the bottom of the grid — Sum or Average, whichever your administrator has set for that column.</p>
+    </section>
+
+    <section id="u8" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">8. Switching between tabs</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">If your administrator has set up more than one table in this widget — for example, the same module viewed with different filters — a sidebar of tabs appears on the left. Click a tab to switch tables. Each tab keeps its own column layout, filters, and settings independently.</p>
+      <p class="text-slate-400 leading-relaxed">You can flag any tab for yourself using the flag icon in the sidebar. This is a personal marker, saved in your browser — it doesn't affect what your teammates see.</p>
+    </section>
+
+    <section id="u9" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">9. Your view is your own</h3>
+      <p class="text-slate-400 leading-relaxed">Column width, column order, page size, and row sort order that you set yourself are remembered per-device — they don't affect what your teammates see, and they persist the next time you open the grid on the same device.</p>
+    </section>
+
+    <section id="u10" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">10. Language</h3>
+      <p class="text-slate-400 leading-relaxed">SETKI Grid's interface automatically matches your browser language. Supported: English, Russian, Hindi, Spanish, Portuguese, German, French, Italian.</p>
+    </section>
+
+    <section id="u11" class="mb-16 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">11. Free vs. Pro access</h3>
+      <p class="text-slate-400 leading-relaxed">Organizations with up to 3 assigned users get full functionality at no cost. From the 4th user, access is seat-based — your administrator purchases and assigns seats. If you see a message asking you to contact your administrator, it means your organization needs an additional seat or one hasn't been assigned to you yet. This doesn't affect what the grid can do — Free and Pro have identical functionality, the difference is purely how many people can use it.</p>
+    </section>
+
+    <!-- ============ PART 2 — ADMIN GUIDE ============ -->
+    <h2 class="text-2xl font-bold text-white mb-1">Part 2 — Configuring SETKI Grid</h2>
+    <p class="text-slate-500 text-sm mb-10">For administrators. The settings panel (⚙) is restricted to the "Administrator" CRM profile — see §1.</p>
+
+    <section id="a1" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">1. Opening settings</h3>
+      <p class="text-slate-400 leading-relaxed">The settings panel (⚙) appears when you hover over the grid, but only for users whose CRM <strong class="text-slate-300">Profile is "Administrator"</strong> — this is hardcoded, not configurable. Everyone else never sees the icon. Settings are saved to your CRM organization and apply to <strong class="text-slate-300">every user</strong>, not just you. Changes preview live in the grid as you edit — nothing is applied for other users until you click Save.</p>
+    </section>
+
+    <section id="a2" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">2. Columns</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">Pick which fields of the module appear as columns. Hidden columns are removed entirely — not collapsed, not accessible to users. "Select all" / "clear all" toggles are available. If every column ends up hidden, the grid shows an "Access restricted" placeholder instead of an empty table — useful in combination with roles, to fully lock a profile out of a module while keeping the tab itself visible.</p>
+      <p class="text-slate-400 leading-relaxed">For each visible column you also set whether it's <strong class="text-slate-300">editable</strong> — users can change values in editable columns inline; other columns are view-only for everyone, regardless of their CRM edit permissions on that field. The same "select all" / "clear all" shortcut applies to the Editable checkbox. System columns are never editable, no matter how this checkbox is set.</p>
+    </section>
+
+    <section id="a3" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">3. Pinning columns</h3>
+      <p class="text-slate-400 leading-relaxed">Choose columns to pin to the left — they stay visible while users scroll horizontally through the rest. Useful for identifying columns (name, stage) on wide tables. The default column order comes from the CRM; within the pinned and unpinned groups, users can still drag columns into their own preferred order, saved per-device (see §9 in Part 1).</p>
+    </section>
+
+    <section id="a4" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">4. Filters and sorting</h3>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Set predefined (admin) filters on any column — including columns you've chosen not to display. These apply automatically when the grid loads, and work on both text and numeric fields; you can set more than one</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>You can hide the filter row entirely — predefined filters still apply, users just can't add their own. When the row is visible, any filter a user types in takes priority over the admin filter on that column for as long as they keep the table open, then reverts</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Set a predefined sort order the same way, with the same option to hide the sorting control from users while keeping the order enforced — a user's own sort choice likewise takes priority only while their session is open</li>
+      </ul>
+    </section>
+
+    <section id="a5" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">5. General settings</h3>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Table (module) — which CRM module this widget displays; the list is pulled automatically from your CRM</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Default rows per page</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Totals row — turn on/off, and per numeric column choose Sum, Average, or none. Totals are calculated across the whole module, respecting any active filters</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Add-row control — show or hide the row used to create new records, independent of column editing rights</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Multi-row (bulk) editing — enable or disable the row checkboxes that let users change one field across many records at once</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Table height — fixed pixel height or fill the container</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Read-only mode — switches the entire grid to view-only for every non-admin user, regardless of the per-column editable setting</li>
+      </ul>
+    </section>
+
+    <section id="a6" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">6. Number & percent visualization</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">Available per numeric column, shown only for columns where the field type applies:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Star rating</strong> display for numeric fields</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Stock mode</strong> — replaces the number with an up/down arrow and color, with a custom (optionally negative) threshold. For percent columns the threshold is fixed at 0</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Color thresholds</strong> — set an upper and lower bound (can be negative) with custom colors; cells outside the range are highlighted (available for both number and percent columns)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Decimal places — configurable per column (number and percent)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Suffix (numbers only) — e.g. a unit of measurement</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Percent columns additionally render as a progress bar</li>
+      </ul>
+    </section>
+
+    <section id="a7" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">7. Dates and text</h3>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Deadline highlighting</strong> for date columns — on by default. Pick the color for "due today" and "overdue" with a color picker (defaults: amber for today, red for overdue). Column type (date vs. date-time) is detected automatically from the CRM field</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Avatars</strong> for text/lookup/owner fields — on by default, shows a colored circle with initials next to the name</li>
+      </ul>
+    </section>
+
+    <section id="a8" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">8. Charts (sparklines)</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">Any column can render a small line chart in the cell instead of a plain value, built from data in another module. Open that column's chart settings and fill in:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Source table (module)</strong> — where the chart's data points come from</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Value field (Y)</strong> — the numeric field that gets plotted</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Label field (X)</strong> — optional, e.g. a date, used to label each point</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Sort order for the points, and the <strong class="text-slate-300">maximum number of points</strong> (default 100 — lower keeps the chart more compact)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Filters</strong> — to show only data related to the current row (rather than the whole module), add one or more filters (source field + operator + current row's column) with "+ Add filter"</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A checkmark at the bottom confirms when the configuration is valid — tick <strong class="text-slate-300">"Enable chart"</strong> to turn it on</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">Once saved, the chart in each cell is a <strong class="text-slate-300">static snapshot</strong> — it does not refresh on its own. Users with edit rights on that record see a ↻ refresh control inside the cell to pull the latest data; hovering a point shows its exact value in a tooltip.</p>
+    </section>
+
+    <section id="a9" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">9. Presets</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">A preset is a saved snapshot of the full configuration above. Presets are global — any administrator can save, apply, or delete any preset. Applying a preset copies its settings into the current draft (visible in the live preview); nothing is written to your organization until you save. If you, as an Administrator, assign a preset to yourself, the settings panel still shows and edits the base org-wide settings (flagged with a yellow warning banner) — not the preset itself.</p>
+      <p class="text-slate-400 leading-relaxed">Typical use: build separate presets per team or per module — e.g. a warehouse view, a sales pipeline view, a read-only view for external contractors — and switch between them in one click instead of reconfiguring manually.</p>
+    </section>
+
+    <section id="a10" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">10. Roles — assigning presets per profile</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">The Roles tab maps each CRM Profile (Administrator, Standard, or any custom profile in your org) to a preset. When a user opens the grid, SETKI checks their Profile and automatically applies the mapped preset — no per-user setup needed, since the CRM already assigns Profiles to users.</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Profiles are pulled automatically from your CRM organization</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A profile left as "— no assignment —" falls back to the base configuration (the settings above, not a preset)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A profile marked with a warning icon existed in a previous mapping but no longer exists in your CRM (renamed or deleted) — remove it with the ✕ next to it</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">This is access <em>within</em> the grid (which columns, filters, edit rights a role sees) — not licensing. It's independent from Free/Pro seat assignment below. Note the settings button (⚙) itself is always restricted to the Administrator profile — that isn't configurable here.</p>
+    </section>
+
+    <section id="a11" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">11. JSON editor</h3>
+      <p class="text-slate-400 leading-relaxed">Every setting above is also exposed as a single JSON document, editable directly with search and one-click copy. It's two-way: editing a toggle in the GUI updates the JSON immediately, and editing the JSON updates the GUI. Useful for copying a full configuration between widgets, or for AI-assisted config generation. A built-in validator highlights invalid input as you type.</p>
+    </section>
+
+    <section id="a12" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-3">12. Multiple tables (Tabs)</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">If one widget placement should show more than one table — for example the same module with different filters for different teams — administrators can add tabs from the sidebar that appears next to the grid:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Click the <strong class="text-slate-300">+</strong> tile at the bottom of the sidebar to add a tab</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Hover a tab and use the flyout panel — ✎ to rename, 🗑 to delete (the first/default tab can't be deleted)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Each tab has fully independent settings — module, columns, filters, everything in this guide is configured separately per tab</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>You can restrict which roles see which tabs; administrators always see every tab regardless of that setting</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">Everyone can switch between the tabs they can see; only administrators can add, rename, or delete them. Any user can also flag a tab for themselves (⚑ in the sidebar) — a personal marker saved in their browser that doesn't affect what anyone else sees.</p>
+    </section>
+
+    <section id="a13" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">13. Managing access — Free tier and Pro seats</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">The License tab shows a different view depending on whether your organization has a Pro subscription:</p>
+
+      <h4 class="text-base font-medium text-slate-200 mb-2">Free tier (no license key entered)</h4>
+      <p class="text-slate-400 leading-relaxed mb-4">The first 3 users of your organization by account creation date get full access automatically (this includes the super admin, who is typically the oldest account) — no configuration needed. This tab just shows you who those 3 are (read-only) and a counter. To extend access beyond 3 users, purchase a Pro subscription and enter the license key here.</p>
+
+      <h4 class="text-base font-medium text-slate-200 mb-2">Buying seats</h4>
+      <ol class="space-y-2 list-decimal list-inside">
+        <li class="text-slate-400">Click "Get a license" in the License tab — this opens setki.dev</li>
+        <li class="text-slate-400">Choose your CRM, a plan, and the number of seats. Seats don't need to match your headcount — buy only for people who'll actually use the grid. A purchased seat count <strong class="text-slate-300">replaces</strong> the 3 free seats rather than adding to them, so count everyone who needs access, including those first 3. Annual billing costs less than monthly</li>
+        <li class="text-slate-400">Check out and pay — handled by LemonSqueezy, by card or PayPal</li>
+        <li class="text-slate-400">LemonSqueezy emails an activation key to the address used at checkout</li>
+        <li class="text-slate-400">Paste that key into the License tab's key field and save — a key activates for one organization on one CRM only</li>
+      </ol>
+
+      <h4 class="text-base font-medium text-slate-200 mb-2 mt-4">Pro tier (license key entered)</h4>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A checklist of every user in your org — check the ones who should have Pro access, up to the number of seats you purchased</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Saving the key and saving seat assignments are separate actions (separate buttons)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>"Refresh limit" re-checks how many seats you've purchased — use this right after buying additional seats</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>"Remove key" (with confirmation) reverts the organization to the Free tier rules — the 3 free seats then go to the earliest-created users, same as above</li>
+      </ul>
+
+      <h4 class="text-base font-medium text-slate-200 mb-2 mt-4">Canceling</h4>
+      <p class="text-slate-400 leading-relaxed mb-2">First remove the key in the License tab, then click "Manage subscription" — it redirects you to your LemonSqueezy customer portal, where you cancel the subscription itself. Both steps are needed; removing the key alone doesn't stop billing.</p>
+      <p class="text-slate-400 leading-relaxed border-l-2 border-amber-500/60 pl-4"><strong class="text-amber-400">"Remove key" does not cancel your subscription.</strong> It only disconnects SETKI Grid's check against that key — your organization immediately reverts to Free tier access rules inside the widget. LemonSqueezy keeps billing you until you cancel the subscription separately, either through the LemonSqueezy customer portal or by contacting <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a>. The confirmation dialog in the widget repeats this warning before you can proceed.</p>
+      <p class="text-slate-400 leading-relaxed mt-4">See the <a href="/terms" class="text-blue-400 hover:underline">Terms of Service</a> for billing details.</p>
+    </section>
+
+    <!-- Help -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">Need help?</h2>
+      <p class="text-slate-400">For anything not covered here, email us at <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a>.</p>
+    </section>
+
+    </main>
+
+  </div>
+
+  <footer class="border-t border-slate-800 py-8 text-center text-slate-600 text-sm">
+    <p>© 2026 SETKI. All rights reserved.</p>
+  </footer>
+
+  <script>
+    (function () {
+      var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+      var links = {};
+      document.querySelectorAll('.toc-link').forEach(function (a) {
+        links[a.getAttribute('href').slice(1)] = a;
+      });
+
+      function onScroll() {
+        var scrollPos = window.scrollY + 140;
+        var currentId = sections.length ? sections[0].id : null;
+        for (var i = 0; i < sections.length; i++) {
+          if (sections[i].offsetTop <= scrollPos) {
+            currentId = sections[i].id;
+          } else {
+            break;
+          }
+        }
+        Object.keys(links).forEach(function (id) {
+          links[id].classList.toggle('active', id === currentId);
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+</body>
+</html>

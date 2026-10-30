@@ -23,7 +23,11 @@
   <main class="max-w-3xl mx-auto px-6 py-16">
 
     <h1 class="text-3xl font-bold text-white mb-2">Admin Guide</h1>
-    <p class="text-slate-500 text-sm mb-12">Configuring SETKI Grid for your organization. Last updated: 2026-07-18</p>
+    <p class="text-slate-500 text-sm mb-8">Configuring SETKI Grid for your organization. Last updated: 2026-10-30</p>
+
+    <div class="rounded-xl overflow-hidden border border-slate-800 mb-12 aspect-video">
+      <iframe class="w-full h-full" src="https://www.youtube.com/embed/e73mKCyiYTA" title="SETKI Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
 
     <!-- 1 -->
     <section class="mb-10">
@@ -34,23 +38,23 @@
     <!-- 2 -->
     <section class="mb-10">
       <h2 class="text-lg font-semibold text-white mb-4">2. Columns</h2>
-      <p class="text-slate-400 leading-relaxed mb-4">Pick which fields of the module appear as columns. Hidden columns are removed entirely — not collapsed, not accessible to users. "Select all" / "clear all" toggles are available.</p>
+      <p class="text-slate-400 leading-relaxed mb-4">Pick which fields of the module appear as columns. Hidden columns are removed entirely — not collapsed, not accessible to users. "Select all" / "clear all" toggles are available. If every column ends up hidden, the grid shows an "Access restricted" placeholder instead of an empty table — useful in combination with roles, to fully lock a profile out of a module while keeping the tab itself visible.</p>
       <p class="text-slate-400 leading-relaxed">For each visible column you also set whether it's <strong class="text-slate-300">editable</strong> — users can change values in editable columns inline; other columns are view-only for everyone, regardless of their Zoho CRM edit permissions on that field.</p>
     </section>
 
     <!-- 3 -->
     <section class="mb-10">
       <h2 class="text-lg font-semibold text-white mb-3">3. Pinning columns</h2>
-      <p class="text-slate-400 leading-relaxed">Choose columns to pin to the left — they stay visible while users scroll horizontally through the rest. Useful for identifying columns (name, stage) on wide tables.</p>
+      <p class="text-slate-400 leading-relaxed">Choose columns to pin to the left — they stay visible while users scroll horizontally through the rest. Useful for identifying columns (name, stage) on wide tables. Within the pinned and unpinned groups, users can still drag columns into their own preferred order (see §9, "Your view is your own" in the User Guide).</p>
     </section>
 
     <!-- 4 -->
     <section class="mb-10">
       <h2 class="text-lg font-semibold text-white mb-3">4. Filters and sorting</h2>
       <ul class="space-y-2">
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Set predefined filters on any column — including columns you've chosen not to display. These apply automatically when the grid loads</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>You can hide the filter row entirely — predefined filters still apply, users just can't change them</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Set a predefined sort order the same way, with the same option to hide sorting controls from users while keeping the order enforced</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Set predefined (admin) filters on any column — including columns you've chosen not to display. These apply automatically when the grid loads, and work on both text and numeric fields; you can set more than one</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>You can hide the filter row entirely — predefined filters still apply, users just can't add their own. When the row is visible, any filter a user types in takes priority over the admin filter on that column for as long as they keep the table open, then reverts</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Set a predefined sort order the same way, with the same option to hide the sorting control from users while keeping the order enforced — a user's own sort choice likewise takes priority only while their session is open</li>
       </ul>
     </section>
 
@@ -58,8 +62,11 @@
     <section class="mb-10">
       <h2 class="text-lg font-semibold text-white mb-4">5. General settings</h2>
       <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Table (module) — which CRM module this widget displays; the list is pulled automatically from your CRM</li>
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Default rows per page</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Totals row — turn on/off, and per numeric column choose Sum, Average, or none</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Totals row — turn on/off, and per numeric column choose Sum, Average, or none. Totals are calculated across the whole module, respecting any active filters</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Add-row control — show or hide the row used to create new records, independent of column editing rights</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Multi-row (bulk) editing — enable or disable the row checkboxes that let users change one field across many records at once</li>
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Table height — fixed pixel height or fill the container</li>
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Read-only mode — switches the entire grid to view-only for every non-admin user, regardless of the per-column editable setting</li>
       </ul>
@@ -71,10 +78,11 @@
       <p class="text-slate-400 leading-relaxed mb-4">Available per numeric column, shown only for columns where the field type applies:</p>
       <ul class="space-y-2">
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Star rating</strong> display for numeric fields</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Stock mode</strong> — replaces the number with an up/down arrow and color</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Color thresholds</strong> — set an upper and lower bound with custom colors; cells outside the range are highlighted (available for both number and percent columns)</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Decimal places and a column suffix (numbers) — configurable per column</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Percent columns additionally render as a progress bar and support their own up/down indicator</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Stock mode</strong> — replaces the number with an up/down arrow and color, with a custom (optionally negative) threshold. For percent columns the threshold is fixed at 0</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Color thresholds</strong> — set an upper and lower bound (can be negative) with custom colors; cells outside the range are highlighted (available for both number and percent columns)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Decimal places — configurable per column (number and percent)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Suffix (numbers only) — e.g. a unit of measurement</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Percent columns additionally render as a progress bar</li>
       </ul>
     </section>
 
@@ -82,70 +90,98 @@
     <section class="mb-10">
       <h2 class="text-lg font-semibold text-white mb-3">7. Dates and text</h2>
       <ul class="space-y-2">
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Deadline highlighting</strong> for date columns — on by default. Pick the color for "due today" and "overdue" with a color picker (defaults: amber for today, red for overdue)</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Avatars</strong> for lookup/owner fields — on by default, shows a colored circle with initials next to the name</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Deadline highlighting</strong> for date columns — on by default. Pick the color for "due today" and "overdue" with a color picker (defaults: amber for today, red for overdue). Column type (date vs. date-time) is detected automatically from the CRM field</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Avatars</strong> for text/lookup/owner fields — on by default, shows a colored circle with initials next to the name</li>
       </ul>
     </section>
 
     <!-- 8 -->
     <section class="mb-10">
-      <h2 class="text-lg font-semibold text-white mb-4">8. Presets</h2>
-      <p class="text-slate-400 leading-relaxed mb-4">A preset is a saved snapshot of the full configuration above. Presets are global — any administrator can save, apply, or delete any preset. Applying a preset copies its settings into the current draft (visible in the live preview); nothing is written to your organization until you save.</p>
-      <p class="text-slate-400 leading-relaxed">Typical use: build separate presets per team or per module — e.g. a warehouse view, a sales pipeline view, a read-only view for external contractors — and switch between them in one click instead of reconfiguring manually.</p>
+      <h2 class="text-lg font-semibold text-white mb-4">8. Charts (sparklines)</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">Any column can render a small line chart in the cell instead of a plain value, built from data in another module. Open that column's chart settings and fill in:</p>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Source table (module)</strong> — where the chart's data points come from</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Value field (Y)</strong> — the numeric field that gets plotted</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Label field (X)</strong> — optional, e.g. a date, used to label each point</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Sort order for the points, and the <strong class="text-slate-300">maximum number of points</strong> (default 100 — lower keeps the chart more compact)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span><strong class="text-slate-300">Filters</strong> — to show only data related to the current row (rather than the whole module), add one or more filters (source field + operator + current row's column) with "+ Add filter"</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A checkmark at the bottom confirms when the configuration is valid — tick <strong class="text-slate-300">"Enable chart"</strong> to turn it on</li>
+      </ul>
+      <p class="text-slate-400 leading-relaxed mt-4">Once saved, the chart in each cell is a <strong class="text-slate-300">static snapshot</strong> — it does not refresh on its own. Users with edit rights on that record see a ↻ refresh control inside the cell to pull the latest data; hovering a point shows its exact value in a tooltip.</p>
     </section>
 
     <!-- 9 -->
     <section class="mb-10">
-      <h2 class="text-lg font-semibold text-white mb-4">9. Roles — assigning presets per Zoho Profile</h2>
+      <h2 class="text-lg font-semibold text-white mb-4">9. Presets</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">A preset is a saved snapshot of the full configuration above. Presets are global — any administrator can save, apply, or delete any preset. Applying a preset copies its settings into the current draft (visible in the live preview); nothing is written to your organization until you save. If you, as an Administrator, assign a preset to yourself, the settings panel still shows and edits the base org-wide settings (flagged with a yellow warning banner) — not the preset itself.</p>
+      <p class="text-slate-400 leading-relaxed">Typical use: build separate presets per team or per module — e.g. a warehouse view, a sales pipeline view, a read-only view for external contractors — and switch between them in one click instead of reconfiguring manually.</p>
+    </section>
+
+    <!-- 10 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-4">10. Roles — assigning presets per Zoho Profile</h2>
       <p class="text-slate-400 leading-relaxed mb-4">The Roles tab maps each Zoho CRM Profile (Administrator, Standard, or any custom profile in your org) to a preset. When a user opens the grid, SETKI checks their Profile and automatically applies the mapped preset — no per-user setup needed, since Zoho already assigns Profiles to users.</p>
       <ul class="space-y-2">
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Profiles are pulled automatically from your Zoho CRM organization</li>
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A profile left as "— no assignment —" falls back to the base configuration (the settings above, not a preset)</li>
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A profile marked with a warning icon existed in a previous mapping but no longer exists in your CRM (renamed or deleted) — remove it with the ✕ next to it</li>
       </ul>
-      <p class="text-slate-400 leading-relaxed mt-4">This is access <em>within</em> the grid (which columns, filters, edit rights a role sees) — not licensing. It's independent from Free/Pro seat assignment below.</p>
-    </section>
-
-    <!-- 10 -->
-    <section class="mb-10">
-      <h2 class="text-lg font-semibold text-white mb-3">10. JSON editor</h2>
-      <p class="text-slate-400 leading-relaxed">Every setting above is also exposed as a single JSON document, editable directly with search and one-click copy. It's two-way: editing a toggle in the GUI updates the JSON immediately, and editing the JSON updates the GUI. Useful for copying a full configuration between widgets, or for AI-assisted config generation.</p>
+      <p class="text-slate-400 leading-relaxed mt-4">This is access <em>within</em> the grid (which columns, filters, edit rights a role sees) — not licensing. It's independent from Free/Pro seat assignment below. Note the settings button (⚙) itself is always restricted to the Administrator profile — that isn't configurable here.</p>
     </section>
 
     <!-- 11 -->
     <section class="mb-10">
-      <h2 class="text-lg font-semibold text-white mb-3">11. Multiple tables (Tabs)</h2>
+      <h2 class="text-lg font-semibold text-white mb-3">11. JSON editor</h2>
+      <p class="text-slate-400 leading-relaxed">Every setting above is also exposed as a single JSON document, editable directly with search and one-click copy. It's two-way: editing a toggle in the GUI updates the JSON immediately, and editing the JSON updates the GUI. Useful for copying a full configuration between widgets, or for AI-assisted config generation. A built-in validator highlights invalid input as you type.</p>
+    </section>
+
+    <!-- 12 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">12. Multiple tables (Tabs)</h2>
       <p class="text-slate-400 leading-relaxed mb-4">If one widget placement should show more than one table — for example the same module with different filters for different teams — administrators can add tabs from the sidebar that appears next to the grid:</p>
       <ul class="space-y-2">
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Click the <strong class="text-slate-300">+</strong> tile at the bottom of the sidebar to add a tab</li>
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Hover a tab and use the flyout panel — ✎ to rename, 🗑 to delete (the first/default tab can't be deleted)</li>
         <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Each tab has fully independent settings — module, columns, filters, everything in this guide is configured separately per tab</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>You can restrict which roles see which tabs; administrators always see every tab regardless of that setting</li>
       </ul>
-      <p class="text-slate-400 leading-relaxed mt-4">Everyone can switch between existing tabs; only administrators can add, rename, or delete them.</p>
-    </section>
-
-    <!-- 12 -->
-    <section class="mb-10">
-      <h2 class="text-lg font-semibold text-white mb-4">12. Managing access — Free tier and Pro seats</h2>
-      <p class="text-slate-400 leading-relaxed mb-4">The License tab shows a different view depending on whether your organization has a Pro subscription:</p>
-
-      <h3 class="text-base font-medium text-slate-200 mb-2">Free tier (no license key entered)</h3>
-      <p class="text-slate-400 leading-relaxed mb-4">The first 3 users of your organization by account creation date get full access automatically — no configuration needed. This tab just shows you who those 3 are (read-only) and a counter. To extend access beyond 3 users, purchase a Pro subscription and enter the license key here.</p>
-
-      <h3 class="text-base font-medium text-slate-200 mb-2">Pro tier (license key entered)</h3>
-      <ul class="space-y-2">
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A checklist of every user in your org — check the ones who should have Pro access, up to the number of seats you purchased</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Saving the key and saving seat assignments are separate actions (separate buttons)</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>"Refresh limit" re-checks how many seats you've purchased — use this right after buying additional seats</li>
-        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>"Remove key" (with confirmation) reverts the organization to the Free tier rules</li>
-      </ul>
-      <p class="text-slate-400 leading-relaxed mt-4">Seats are purchased separately at <a href="https://setki.dev" class="text-blue-400 hover:underline">setki.dev</a> — billing is handled by LemonSqueezy, not inside Zoho CRM. See the <a href="/terms" class="text-blue-400 hover:underline">Terms of Service</a> for details.</p>
-      <p class="text-slate-400 leading-relaxed mt-4 border-l-2 border-amber-500/60 pl-4"><strong class="text-amber-400">"Remove key" does not cancel your subscription.</strong> It only disconnects SETKI Grid's check against that key — your organization immediately reverts to Free tier access rules inside the widget. LemonSqueezy keeps billing you until you cancel the subscription separately, either through the LemonSqueezy customer portal or by contacting <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a>. The confirmation dialog in the widget repeats this warning before you can proceed.</p>
+      <p class="text-slate-400 leading-relaxed mt-4">Everyone can switch between the tabs they can see; only administrators can add, rename, or delete them. Any user can also flag a tab for themselves (⚑ in the sidebar) — a personal marker saved in their browser that doesn't affect what anyone else sees.</p>
     </section>
 
     <!-- 13 -->
     <section class="mb-10">
-      <h2 class="text-lg font-semibold text-white mb-3">13. Need help?</h2>
+      <h2 class="text-lg font-semibold text-white mb-4">13. Managing access — Free tier and Pro seats</h2>
+      <p class="text-slate-400 leading-relaxed mb-4">The License tab shows a different view depending on whether your organization has a Pro subscription:</p>
+
+      <h3 class="text-base font-medium text-slate-200 mb-2">Free tier (no license key entered)</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">The first 3 users of your organization by account creation date get full access automatically (this includes the super admin, who is typically the oldest account) — no configuration needed. This tab just shows you who those 3 are (read-only) and a counter. To extend access beyond 3 users, purchase a Pro subscription and enter the license key here.</p>
+
+      <h3 class="text-base font-medium text-slate-200 mb-2">Buying seats</h3>
+      <ol class="space-y-2 list-decimal list-inside">
+        <li class="text-slate-400">Click "Get a license" in the License tab — this opens setki.dev</li>
+        <li class="text-slate-400">Choose your CRM, a plan, and the number of seats. Seats don't need to match your headcount — buy only for people who'll actually use the grid. Annual billing costs less than monthly</li>
+        <li class="text-slate-400">Check out and pay — handled by LemonSqueezy, by card or PayPal</li>
+        <li class="text-slate-400">LemonSqueezy emails an activation key to the address used at checkout</li>
+        <li class="text-slate-400">Paste that key into the License tab's key field and save — a key activates for one organization on one CRM only</li>
+      </ol>
+
+      <h3 class="text-base font-medium text-slate-200 mb-2 mt-4">Pro tier (license key entered)</h3>
+      <ul class="space-y-2">
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>A checklist of every user in your org — check the ones who should have Pro access, up to the number of seats you purchased</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>Saving the key and saving seat assignments are separate actions (separate buttons)</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>"Refresh limit" re-checks how many seats you've purchased — use this right after buying additional seats</li>
+        <li class="flex gap-2 text-slate-400"><span class="text-blue-400 shrink-0">—</span>"Remove key" (with confirmation) reverts the organization to the Free tier rules — the 3 free seats then go to the earliest-created users, same as above</li>
+      </ul>
+
+      <h3 class="text-base font-medium text-slate-200 mb-2 mt-4">Canceling</h3>
+      <p class="text-slate-400 leading-relaxed mb-2">First remove the key in the License tab, then click "Manage subscription" — it redirects you to your LemonSqueezy customer portal, where you cancel the subscription itself. Both steps are needed; removing the key alone doesn't stop billing.</p>
+      <p class="text-slate-400 leading-relaxed border-l-2 border-amber-500/60 pl-4"><strong class="text-amber-400">"Remove key" does not cancel your subscription.</strong> It only disconnects SETKI Grid's check against that key — your organization immediately reverts to Free tier access rules inside the widget. LemonSqueezy keeps billing you until you cancel the subscription separately, either through the LemonSqueezy customer portal or by contacting <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a>. The confirmation dialog in the widget repeats this warning before you can proceed.</p>
+      <p class="text-slate-400 leading-relaxed mt-4">See the <a href="/terms" class="text-blue-400 hover:underline">Terms of Service</a> for billing details.</p>
+    </section>
+
+    <!-- 14 -->
+    <section class="mb-10">
+      <h2 class="text-lg font-semibold text-white mb-3">14. Need help?</h2>
       <p class="text-slate-400">For end-user instructions (not configuration), see the <a href="/user-guide" class="text-blue-400 hover:underline">User Guide</a>. For anything not covered here, email us at <a href="mailto:dev@setki.dev" class="text-blue-400 hover:underline">dev@setki.dev</a>.</p>
     </section>
 
