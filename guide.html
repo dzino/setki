@@ -15,6 +15,10 @@
     .toc-group-label:first-child { margin-top: 0; }
     .sidebar-scroll { scrollbar-width: none; }
     .sidebar-scroll::-webkit-scrollbar { display: none; }
+    #lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; }
+    #lightbox.open { display: flex; }
+    #lightbox img { max-width: 100%; max-height: 100%; border-radius: 12px; box-shadow: 0 25px 60px rgba(0,0,0,0.7); animation: lb-in .18s ease; }
+    @keyframes lb-in { from { opacity: 0; transform: scale(0.93); } to { opacity: 1; transform: scale(1); } }
   </style>
 </head>
 
@@ -135,7 +139,7 @@
       <h3 class="text-lg font-semibold text-white mb-4">1. Starting the install</h3>
       <p class="text-slate-400 leading-relaxed mb-4">Open the install link for SETKI Grid (shared by SETKI, or found via the Marketplace icon in the top navbar → <strong class="text-slate-300">Settings → Extensions → All</strong> once the extension is listed publicly). Zoho CRM shows a confirmation dialog with the extension's details. Agree to the Terms of Service and authorize SETKI Grid to access and process your data, then click <strong class="text-slate-300">Continue</strong>.</p>
       <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
-        <img src="install-1-confirm.jpg" alt="Zoho CRM — confirm SETKI Grid installation" class="w-full h-auto">
+        <img src="install-1-confirm.jpg" alt="Zoho CRM — confirm SETKI Grid installation" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
     </section>
 
@@ -143,7 +147,7 @@
       <h3 class="text-lg font-semibold text-white mb-4">2. Choosing who gets access</h3>
       <p class="text-slate-400 leading-relaxed mb-4">Pick which users can see the extension: admins only, all users, or specific profiles. This controls who the extension is installed for — it's separate from the per-column edit permissions you configure later inside the grid itself (see Part 2, §2).</p>
       <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
-        <img src="install-2-permissions.jpg" alt="Zoho CRM — choose users and profiles for SETKI Grid" class="w-full h-auto">
+        <img src="install-2-permissions.jpg" alt="Zoho CRM — choose users and profiles for SETKI Grid" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
     </section>
 
@@ -151,7 +155,7 @@
       <h3 class="text-lg font-semibold text-white mb-4">3. Installation finishing</h3>
       <p class="text-slate-400 leading-relaxed mb-4">Zoho CRM installs the extension's components in the background — you'll see a progress indicator and receive a notification when it's done. This typically takes under a minute.</p>
       <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
-        <img src="install-3-progress.jpg" alt="Zoho CRM — SETKI Grid installation in progress" class="w-full h-auto">
+        <img src="install-3-progress.jpg" alt="Zoho CRM — SETKI Grid installation in progress" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
     </section>
 
@@ -159,7 +163,7 @@
       <h3 class="text-lg font-semibold text-white mb-4">4. Opening the grid</h3>
       <p class="text-slate-400 leading-relaxed mb-4">Once the status reads <strong class="text-slate-300">Active</strong>, the extension is installed. Open the module or web tab your administrator has attached SETKI Grid to (Setup → Customization → Modules and Fields for standard modules, or the relevant web tab in the left sidebar) — the grid replaces the standard list view there. From here, continue to Part 2 below to configure which table and columns it shows.</p>
       <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
-        <img src="install-4-active.jpg" alt="Zoho CRM — SETKI Grid installed and active" class="w-full h-auto">
+        <img src="install-4-active.jpg" alt="Zoho CRM — SETKI Grid installed and active" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
     </section>
 
@@ -188,7 +192,7 @@
       <p class="text-slate-400 leading-relaxed mb-4"><strong class="text-slate-300">Double-click any cell</strong> to edit it directly — no need to open the record. Press Enter or click away to save; your change appears immediately, and rolls back automatically if the save fails.</p>
 
       <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
-        <img src="screenshot-1-inline-edit.png" alt="SETKI Grid — inline edit" class="w-full h-auto">
+        <img src="screenshot-1-inline-edit.png" alt="SETKI Grid — inline edit" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
 
       <p class="text-slate-400 leading-relaxed mb-2">Every field type edits the way you'd expect:</p>
@@ -206,7 +210,7 @@
     <section id="u4" class="mb-10 scroll-mt-6">
       <h3 class="text-lg font-semibold text-white mb-4">4. Bulk editing multiple rows</h3>
       <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
-        <img src="screenshot-2-bulk-edit.png" alt="SETKI Grid — bulk edit" class="w-full h-auto">
+        <img src="screenshot-2-bulk-edit.png" alt="SETKI Grid — bulk edit" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
       <p class="text-slate-400 leading-relaxed">Select several rows using the row checkboxes, then change one field — the new value is applied to every selected row at once. Useful for updating a stage, owner, or status across dozens of records in seconds instead of opening each one.</p>
     </section>
@@ -223,7 +227,7 @@
     <section id="u6" class="mb-10 scroll-mt-6">
       <h3 class="text-lg font-semibold text-white mb-4">6. Seeing trends without leaving the grid</h3>
       <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
-        <img src="screenshot-3-sparklines-deadline.png" alt="SETKI Grid — sparklines and color thresholds" class="w-full h-auto">
+        <img src="screenshot-3-sparklines-deadline.png" alt="SETKI Grid — sparklines and color thresholds" class="w-full h-auto cursor-zoom-in" onclick="openLightbox(this)">
       </div>
       <p class="text-slate-400 leading-relaxed mb-4">Where your administrator has configured them, columns can show:</p>
       <ul class="space-y-2">
@@ -460,6 +464,24 @@
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
     })();
+  </script>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('open');
+      document.addEventListener('keydown', onLightboxKey);
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.removeEventListener('keydown', onLightboxKey);
+    }
+    function onLightboxKey(e) { if (e.key === 'Escape') closeLightbox(); }
   </script>
 
 </body>
