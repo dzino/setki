@@ -32,6 +32,12 @@
 
     <!-- Left sidebar nav -->
     <aside class="sidebar-scroll hidden lg:block w-56 shrink-0 sticky top-8 py-16 max-h-[calc(100vh-4rem)] overflow-y-auto">
+      <p class="toc-group-label">Installing in Zoho CRM</p>
+      <a href="#i1" class="toc-link">1. Starting the install</a>
+      <a href="#i2" class="toc-link">2. Choosing who gets access</a>
+      <a href="#i3" class="toc-link">3. Installation finishing</a>
+      <a href="#i4" class="toc-link">4. Opening the grid</a>
+
       <p class="toc-group-label">Part 1 — Using the grid</p>
       <a href="#u1" class="toc-link">1. What is SETKI Grid</a>
       <a href="#u2" class="toc-link">2. Viewing your data</a>
@@ -65,7 +71,7 @@
     <main class="max-w-3xl mx-auto px-0 py-16 min-w-0">
 
     <h1 class="text-3xl font-bold text-white mb-2">SETKI Guide</h1>
-    <p class="text-slate-500 text-sm mb-8">Everything you need to use and configure SETKI Grid, on one page. Last updated: 2026-10-30</p>
+    <p class="text-slate-500 text-sm mb-8">Everything you need to install, use, and configure SETKI Grid, on one page. Last updated: 2026-11-10</p>
 
     <div class="rounded-xl overflow-hidden border border-slate-800 mb-10 aspect-square">
       <iframe class="w-full h-full" src="https://www.youtube.com/embed/e73mKCyiYTA" title="SETKI Introduction" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -75,6 +81,15 @@
     <details class="rounded-xl border border-slate-800 p-6 mb-16 lg:hidden">
       <summary class="text-white font-semibold cursor-pointer">On this page</summary>
       <div class="grid sm:grid-cols-2 gap-x-8 gap-y-6 mt-4">
+        <div>
+          <p class="text-slate-500 text-xs uppercase tracking-wide mb-2">Installing in Zoho CRM</p>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#i1" class="text-blue-400 hover:underline">1. Starting the install</a></li>
+            <li><a href="#i2" class="text-blue-400 hover:underline">2. Choosing who gets access</a></li>
+            <li><a href="#i3" class="text-blue-400 hover:underline">3. Installation finishing</a></li>
+            <li><a href="#i4" class="text-blue-400 hover:underline">4. Opening the grid</a></li>
+          </ul>
+        </div>
         <div>
           <p class="text-slate-500 text-xs uppercase tracking-wide mb-2">Part 1 — Using the grid</p>
           <ul class="space-y-1 text-sm">
@@ -111,6 +126,42 @@
         </div>
       </div>
     </details>
+
+    <!-- ============ INSTALLATION (ZOHO CRM) ============ -->
+    <h2 class="text-2xl font-bold text-white mb-1">Installing SETKI Grid in Zoho CRM</h2>
+    <p class="text-slate-500 text-sm mb-10">For a Zoho CRM administrator setting up the extension for the first time.</p>
+
+    <section id="i1" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">1. Starting the install</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">Open the install link for SETKI Grid (shared by SETKI, or found via the Marketplace icon in the top navbar → <strong class="text-slate-300">Settings → Extensions → All</strong> once the extension is listed publicly). Zoho CRM shows a confirmation dialog with the extension's details. Agree to the Terms of Service and authorize SETKI Grid to access and process your data, then click <strong class="text-slate-300">Continue</strong>.</p>
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="install-1-confirm.jpg" alt="Zoho CRM — confirm SETKI Grid installation" class="w-full h-auto">
+      </div>
+    </section>
+
+    <section id="i2" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">2. Choosing who gets access</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">Pick which users can see the extension: admins only, all users, or specific profiles. This controls who the extension is installed for — it's separate from the per-column edit permissions you configure later inside the grid itself (see Part 2, §2).</p>
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="install-2-permissions.jpg" alt="Zoho CRM — choose users and profiles for SETKI Grid" class="w-full h-auto">
+      </div>
+    </section>
+
+    <section id="i3" class="mb-10 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">3. Installation finishing</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">Zoho CRM installs the extension's components in the background — you'll see a progress indicator and receive a notification when it's done. This typically takes under a minute.</p>
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="install-3-progress.jpg" alt="Zoho CRM — SETKI Grid installation in progress" class="w-full h-auto">
+      </div>
+    </section>
+
+    <section id="i4" class="mb-16 scroll-mt-6">
+      <h3 class="text-lg font-semibold text-white mb-4">4. Opening the grid</h3>
+      <p class="text-slate-400 leading-relaxed mb-4">Once the status reads <strong class="text-slate-300">Active</strong>, the extension is installed. Open the module or web tab your administrator has attached SETKI Grid to (Setup → Customization → Modules and Fields for standard modules, or the relevant web tab in the left sidebar) — the grid replaces the standard list view there. From here, continue to Part 2 below to configure which table and columns it shows.</p>
+      <div class="rounded-xl overflow-hidden border border-slate-800 mb-4">
+        <img src="install-4-active.jpg" alt="Zoho CRM — SETKI Grid installed and active" class="w-full h-auto">
+      </div>
+    </section>
 
     <!-- ============ PART 1 — USER GUIDE ============ -->
     <h2 class="text-2xl font-bold text-white mb-1">Part 1 — Using the grid</h2>
